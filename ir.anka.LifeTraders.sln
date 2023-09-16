@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.API", "ir.anka.LifeTraders.API/ir.anka.LifeTraders.API.csproj", "{3F6EEA61-D465-4048-BDE0-CECDCD253428}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.API", "ir.anka.LifeTraders.API\ir.anka.LifeTraders.API.csproj", "{3F6EEA61-D465-4048-BDE0-CECDCD253428}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.SandBox", "ir.anka.LifeTraders.SandBox\ir.anka.LifeTraders.SandBox.csproj", "{B057EE26-6116-490C-9066-7C0A250E7565}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mt4grpc", "Mt4Grpc\mt4grpc.csproj", "{32D08C8F-421A-42D4-BF75-D11C05015598}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{3F6EEA61-D465-4048-BDE0-CECDCD253428}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F6EEA61-D465-4048-BDE0-CECDCD253428}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F6EEA61-D465-4048-BDE0-CECDCD253428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B057EE26-6116-490C-9066-7C0A250E7565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B057EE26-6116-490C-9066-7C0A250E7565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B057EE26-6116-490C-9066-7C0A250E7565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B057EE26-6116-490C-9066-7C0A250E7565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32D08C8F-421A-42D4-BF75-D11C05015598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32D08C8F-421A-42D4-BF75-D11C05015598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32D08C8F-421A-42D4-BF75-D11C05015598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32D08C8F-421A-42D4-BF75-D11C05015598}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

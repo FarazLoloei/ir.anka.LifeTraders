@@ -1,0 +1,780 @@
+[
+  {
+    "serverInfoEx": {
+      "serverName": "MetaQuotes-Demo",
+      "companyName": "MetaQuotes Software Corp.",
+      "dst": 1,
+      "timeZone": 120,
+      "address": "27.111.161.145:1950",
+      "pingTime": 1,
+      "companyLink": ""
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": "Access Point EU 0"
+        },
+        "addresses": [
+          {
+            "address": "78.140.180.201:443"
+          },
+          {
+            "address": "[2a00:1178:1:60::c9]:443"
+          }
+        ]
+      },
+      {
+        "accessRec": {
+          "serverName": "Access Point EU 1"
+        },
+        "addresses": [
+          {
+            "address": "78.140.180.198:443"
+          },
+          {
+            "address": "[2a00:1178:1:60::c6]:443"
+          },
+          {
+            "address": "access.metatrader5.com:443"
+          }
+        ]
+      },
+      {
+        "accessRec": {
+          "serverName": "Access Point EU 3"
+        },
+        "addresses": [
+          {
+            "address": "195.201.195.179:443"
+          }
+        ]
+      },
+      {
+        "accessRec": {
+          "serverName": "Access Point US 1"
+        },
+        "addresses": [
+          {
+            "address": "142.215.208.236:443"
+          },
+          {
+            "address": "[2607:f6f0:6004::ec]:443"
+          }
+        ]
+      },
+      {
+        "accessRec": {
+          "serverName": "Access Point HK 1"
+        },
+        "addresses": [
+          {
+            "address": "27.111.161.145:1950"
+          },
+          {
+            "address": "[2404:6900:1013:3::145]:443"
+          }
+        ]
+      },
+      {
+        "accessRec": {
+          "serverName": "Access Point BR 1"
+        },
+        "addresses": [
+          {
+            "address": "177.154.156.126:1952"
+          },
+          {
+            "address": "[2001:12e8:2039::102]:443"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "AMarkets-Demo",
+      "companyName": "AMarkets LLC",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "52.18.32.194:1950",
+      "pingTime": 10000000,
+      "companyLink": "www.amarkets.com"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "52.18.32.194:443"
+          },
+          {
+            "address": "52.18.32.194:1950"
+          },
+          {
+            "address": "51.75.241.104:443"
+          },
+          {
+            "address": "51.75.241.104:1950"
+          },
+          {
+            "address": "[2001:41d0:203:4068::1]:443"
+          },
+          {
+            "address": "[2001:41d0:203:4068::1]:1950"
+          },
+          {
+            "address": "34.247.94.79:443"
+          },
+          {
+            "address": "34.247.94.79:1950"
+          },
+          {
+            "address": "[2a05:d018:14a0:c480:a85a:d50:64aa:da1]:1950"
+          },
+          {
+            "address": "82.99.238.86:1968"
+          },
+          {
+            "address": "[2001:470:1f1c:3b7::2]:1968"
+          },
+          {
+            "address": "185.10.72.77:1968"
+          },
+          {
+            "address": "[2001:470:1f28:10e::2]:1968"
+          }
+        ]
+      }
+    ],
+    "accessesEx": [
+      {
+        "accessRec": {},
+        "addresses": []
+      },
+      {
+        "accessRec": {},
+        "addresses": []
+      }
+    ]
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "AMarkets-Real",
+      "companyName": "AMarkets LLC",
+      "dst": 1,
+      "timeZone": 120,
+      "address": "137.74.94.238:443",
+      "pingTime": 10000000,
+      "companyLink": "www.amarkets.com"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": "AMarkets-2"
+        },
+        "addresses": [
+          {
+            "address": "137.74.94.238:443"
+          },
+          {
+            "address": "137.74.94.238:1950"
+          },
+          {
+            "address": "[2001:41d0:1004:32ee::1]:443"
+          },
+          {
+            "address": "[2001:41d0:1004:32ee::1]:1950"
+          }
+        ]
+      },
+      {
+        "accessRec": {
+          "serverName": "AMarkets-3"
+        },
+        "addresses": [
+          {
+            "address": "34.255.255.117:443"
+          },
+          {
+            "address": "34.255.255.117:1950"
+          },
+          {
+            "address": "[2a05:d018:14a0:c440:487a:33a:56d5:73b0]:443"
+          },
+          {
+            "address": "[2a05:d018:14a0:c440:487a:33a:56d5:73b0]:1950"
+          }
+        ]
+      },
+      {
+        "accessRec": {
+          "serverName": "AMarkets-4"
+        },
+        "addresses": [
+          {
+            "address": "85.17.64.45:443"
+          },
+          {
+            "address": "85.17.64.45:1950"
+          }
+        ]
+      },
+      {
+        "accessRec": {
+          "serverName": "AMarkets-7"
+        },
+        "addresses": [
+          {
+            "address": "157.175.74.224:443"
+          },
+          {
+            "address": "[2a05:d01e:41f:1b30:e7b5:c085:e3a:846f]:443"
+          }
+        ]
+      },
+      {
+        "accessRec": {
+          "serverName": "AMarkets-8"
+        },
+        "addresses": [
+          {
+            "address": "185.10.72.77:1965"
+          },
+          {
+            "address": "[2001:470:1f14:2f5::2]:1965"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "AgenaMarkets-Live",
+      "companyName": "Agena Markets LLC",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": "www.agenamarkets.com"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "149.5.82.224:443"
+          },
+          {
+            "address": "mt30.leverate.com:443"
+          },
+          {
+            "address": "172.25.0.73:443"
+          },
+          {
+            "address": "172.25.0.51:443"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "AgenaMarkets-Demo",
+      "companyName": "Agena Markets LLC",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": "www.agenamarkets.com"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "172.25.2.161:443"
+          },
+          {
+            "address": "149.5.82.229:443"
+          },
+          {
+            "address": "mt31.leverate.com:443"
+          },
+          {
+            "address": "172.25.2.162:443"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "AlamiyaMarkets-Live",
+      "companyName": "Alamiya Markets Ltd.",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": "www.alamiyamarkets.com"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "188.72.231.116:443"
+          },
+          {
+            "address": "188.72.231.116:1950"
+          },
+          {
+            "address": "206.54.177.18:443"
+          },
+          {
+            "address": "206.54.177.18:1950"
+          },
+          {
+            "address": "51.68.142.70:443"
+          },
+          {
+            "address": "51.68.142.70:1950"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "AlamiyaMarkets-Demo",
+      "companyName": "Alamiya Markets Ltd.",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": "www.alamiyamarkets.com"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "188.72.231.115:443"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "BaxiaMarkets-UK01",
+      "companyName": "Baxia Global Ltd",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": "www.baxiamarkets.com"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "185.97.160.43:443"
+          }
+        ]
+      },
+      {
+        "accessRec": {
+          "serverName": "Access Server"
+        },
+        "addresses": [
+          {
+            "address": "188.240.63.229:443"
+          },
+          {
+            "address": "188.240.63.229:1950"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "DNAMarkets-Real",
+      "companyName": "DNA Markets Pty Ltd",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": "www.dnamarkets.com"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "103.100.72.64:443"
+          },
+          {
+            "address": "46.235.36.61:443"
+          },
+          {
+            "address": "47.19.23.12:443"
+          },
+          {
+            "address": "10.30.6.222:443"
+          },
+          {
+            "address": "18.230.4.92:443"
+          },
+          {
+            "address": "52.65.203.135:443"
+          },
+          {
+            "address": "18.134.201.223:443"
+          },
+          {
+            "address": "35.79.60.67:443"
+          },
+          {
+            "address": "34.197.54.96:443"
+          },
+          {
+            "address": "8.218.184.20:443"
+          }
+        ]
+      },
+      {
+        "accessRec": {
+          "serverName": "Access Server"
+        },
+        "addresses": [
+          {
+            "address": "46.235.36.7:443"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "DNAMarkets-Demo",
+      "companyName": "DNA Markets Pty Ltd",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": "www.dnamarkets.com"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "52.221.8.73:443"
+          },
+          {
+            "address": "10.18.2.204:443"
+          },
+          {
+            "address": "13.238.171.151:443"
+          },
+          {
+            "address": "13.41.183.176:443"
+          },
+          {
+            "address": "34.206.8.103:443"
+          },
+          {
+            "address": "18.167.152.60:443"
+          },
+          {
+            "address": "157.241.29.74:443"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "NagaMarkets-Live",
+      "companyName": "Naga Markets Europe Ltd",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": "naga.com"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "185.96.244.128:443"
+          },
+          {
+            "address": "185.96.244.131:443"
+          },
+          {
+            "address": "185.96.244.130:443"
+          },
+          {
+            "address": "193.30.23.139:443"
+          },
+          {
+            "address": "193.30.23.152:443"
+          }
+        ]
+      },
+      {
+        "accessRec": {
+          "serverName": "Access Server"
+        },
+        "addresses": [
+          {
+            "address": "185.96.244.44:443"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "NagaMarkets-Demo",
+      "companyName": "Naga Markets Europe Ltd",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": "naga.com"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "10.221.7.86:1950"
+          },
+          {
+            "address": "18.134.55.145:443"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "AlphaMarketsSA-Live",
+      "companyName": "Pal Life (Pty) Ltd",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": "www.alphamarkets.io"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "10.0.0.4:443"
+          },
+          {
+            "address": "mt5live-sa01.southafricanorth.cloudapp.azure.com:443"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "XAMarkets-Server",
+      "companyName": "XA Markets Ltd",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": "www.xamarkets.com"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "82.145.41.8:443"
+          },
+          {
+            "address": "89.39.104.235:443"
+          }
+        ]
+      },
+      {
+        "accessRec": {
+          "serverName": "Access Server"
+        },
+        "addresses": [
+          {
+            "address": "193.30.23.135:443"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "YaMarkets-Server",
+      "companyName": "YaMarkets Limited",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": "www.yamarkets.com"
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "104.243.43.183:443"
+          },
+          {
+            "address": "131.153.76.194:443"
+          },
+          {
+            "address": "51.79.231.110:443"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "10.211.254.254",
+      "companyName": "Default",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": ""
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "10.211.254.254"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "cmsprime.com",
+      "companyName": "Default",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": ""
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "cmsprime.com"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  },
+  {
+    "serverInfoEx": {
+      "serverName": "211.106.212.197:443",
+      "companyName": "Default",
+      "dst": 0,
+      "timeZone": 0,
+      "address": "",
+      "pingTime": 10000000,
+      "companyLink": ""
+    },
+    "serverInfo": null,
+    "accesses": [
+      {
+        "accessRec": {
+          "serverName": ""
+        },
+        "addresses": [
+          {
+            "address": "211.106.212.197:443"
+          }
+        ]
+      }
+    ],
+    "accessesEx": []
+  }
+]
