@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ir.anka.LifeTraders.API\ir.anka.LifeTraders.WebAPI.csproj" />
+    <ProjectReference Include="..\ir.anka.LifeTraders.Core\ir.anka.LifeTraders.Core.csproj" />
+    <ProjectReference Include="..\ir.anka.LifeTraders.Infrastructure\ir.anka.LifeTraders.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
