@@ -60,6 +60,7 @@ public class Program
         //api.RequestOrderHistory(DateTime.Now.AddDays(-2), DateTime.Now.AddDays(1));
         //api.RequestOrderHistory(new DateTime(2020, 03, 24), new DateTime(2020, 04, 02));
         api.RequestOrderHistory(DateTime.Now.AddDays(-1024), DateTime.Now);
+        api.GetOpenedOrders();
         Console.WriteLine("Press any key...");
         Console.ReadKey();
 
