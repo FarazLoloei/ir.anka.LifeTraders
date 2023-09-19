@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ir.anka.LifeTraders.Common\ir.anka.LifeTraders.Common.csproj" />
+    <ProjectReference Include="..\ir.anka.LifeTraders.Core\ir.anka.LifeTraders.Core.csproj" />
+  </ItemGroup>
+
+</Project>

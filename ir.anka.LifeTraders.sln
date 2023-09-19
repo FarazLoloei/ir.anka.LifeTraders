@@ -3,11 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.API", "ir.anka.LifeTraders.API\ir.anka.LifeTraders.API.csproj", "{3F6EEA61-D465-4048-BDE0-CECDCD253428}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.WebAPI", "ir.anka.LifeTraders.API\ir.anka.LifeTraders.WebAPI.csproj", "{3F6EEA61-D465-4048-BDE0-CECDCD253428}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.SandBox", "ir.anka.LifeTraders.SandBox\ir.anka.LifeTraders.SandBox.csproj", "{B057EE26-6116-490C-9066-7C0A250E7565}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mt4grpc", "Mt4Grpc\mt4grpc.csproj", "{32D08C8F-421A-42D4-BF75-D11C05015598}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.Core", "ir.anka.LifeTraders.Core\ir.anka.LifeTraders.Core.csproj", "{D8FE43E2-3FE1-4771-90DD-C9447A8E0029}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.Infrastructure", "ir.anka.LifeTraders.Infrastructure\ir.anka.LifeTraders.Infrastructure.csproj", "{43F2FA8E-D1EE-4D69-AADA-3D2E60EA4A75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.SharedKernal", "ir.anka.LifeTraders.SharedKernal\ir.anka.LifeTraders.SharedKernal.csproj", "{B74DA4FB-4F24-4A03-8DF9-39E0CE82FD0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.Test.Functional", "ir.anka.LifeTraders.Test.Functional\ir.anka.LifeTraders.Test.Functional.csproj", "{8874133D-7D61-43D4-88B9-D32BF38C29F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.Test.Integrational", "ir.anka.LifeTraders.Test.Integrational\ir.anka.LifeTraders.Test.Integrational.csproj", "{03628C62-75DF-4B97-924B-B7046866382D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.Test", "ir.anka.LifeTraders.Test\ir.anka.LifeTraders.Test.csproj", "{62434888-23B5-4CD0-9C9D-A88482A4A465}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.Common", "ir.anka.LifeTraders.Common\ir.anka.LifeTraders.Common.csproj", "{67B3A7DC-3984-4543-9741-6AE85A480D2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +41,34 @@ Global
 		{32D08C8F-421A-42D4-BF75-D11C05015598}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32D08C8F-421A-42D4-BF75-D11C05015598}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32D08C8F-421A-42D4-BF75-D11C05015598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8FE43E2-3FE1-4771-90DD-C9447A8E0029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8FE43E2-3FE1-4771-90DD-C9447A8E0029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8FE43E2-3FE1-4771-90DD-C9447A8E0029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8FE43E2-3FE1-4771-90DD-C9447A8E0029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43F2FA8E-D1EE-4D69-AADA-3D2E60EA4A75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F2FA8E-D1EE-4D69-AADA-3D2E60EA4A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F2FA8E-D1EE-4D69-AADA-3D2E60EA4A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F2FA8E-D1EE-4D69-AADA-3D2E60EA4A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B74DA4FB-4F24-4A03-8DF9-39E0CE82FD0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B74DA4FB-4F24-4A03-8DF9-39E0CE82FD0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B74DA4FB-4F24-4A03-8DF9-39E0CE82FD0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B74DA4FB-4F24-4A03-8DF9-39E0CE82FD0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8874133D-7D61-43D4-88B9-D32BF38C29F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8874133D-7D61-43D4-88B9-D32BF38C29F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8874133D-7D61-43D4-88B9-D32BF38C29F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8874133D-7D61-43D4-88B9-D32BF38C29F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03628C62-75DF-4B97-924B-B7046866382D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03628C62-75DF-4B97-924B-B7046866382D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03628C62-75DF-4B97-924B-B7046866382D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03628C62-75DF-4B97-924B-B7046866382D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62434888-23B5-4CD0-9C9D-A88482A4A465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62434888-23B5-4CD0-9C9D-A88482A4A465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62434888-23B5-4CD0-9C9D-A88482A4A465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62434888-23B5-4CD0-9C9D-A88482A4A465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67B3A7DC-3984-4543-9741-6AE85A480D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B3A7DC-3984-4543-9741-6AE85A480D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B3A7DC-3984-4543-9741-6AE85A480D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B3A7DC-3984-4543-9741-6AE85A480D2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
