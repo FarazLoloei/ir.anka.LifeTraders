@@ -10,4 +10,11 @@
     <ProjectReference Include="..\ir.anka.LifeTraders.SharedKernal\ir.anka.LifeTraders.SharedKernal.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ApplicationService\NewFolder\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Facade\" />
+    <Folder Include="ReadModel\" />
+  </ItemGroup>
+
 </Project>
