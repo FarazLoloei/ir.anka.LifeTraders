@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ir.anka.LifeTraders.Core
+namespace ir.anka.LifeTraders.Trader.Core
 {
-    public class ModulesBootstrapper
+    internal class ModulesBootstrapper
     {
     }
 }
