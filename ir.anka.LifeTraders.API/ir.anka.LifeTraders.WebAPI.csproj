@@ -11,7 +11,24 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
-  </ItemGroup>
+		  <PackageReference Include="Autofac" Version="7.1.0" />
+		  <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+		  <PackageReference Include="Autofac.Extras.Moq" Version="6.1.1" />
+		  <PackageReference Include="FastEndpoints" Version="5.17.1.1" />
+		  <PackageReference Include="FastEndpoints.ApiExplorer" Version="2.2.0" />
+		  <PackageReference Include="FastEndpoints.Swagger" Version="5.17.1.1" />
+		  <PackageReference Include="FastEndpoints.Swagger.Swashbuckle" Version="2.2.0" />
+		  <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+		  <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.7.1" />
+		  <PackageReference Include="Microsoft.OpenApi" Version="1.6.8" />
+		  <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+		  <PackageReference Include="Serilog" Version="3.0.1" />
+		  <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
+		  <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
+		  <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+		  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+		  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+	  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ir.anka.LifeTraders.Common\ir.anka.LifeTraders.Common.csproj" />
