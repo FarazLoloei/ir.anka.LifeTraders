@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.Core", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.Infrastructure", "ir.anka.LifeTraders.Infrastructure\ir.anka.LifeTraders.Infrastructure.csproj", "{43F2FA8E-D1EE-4D69-AADA-3D2E60EA4A75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.SharedKernal", "ir.anka.LifeTraders.SharedKernal\ir.anka.LifeTraders.SharedKernal.csproj", "{B74DA4FB-4F24-4A03-8DF9-39E0CE82FD0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.SharedKernal", "ir.anka.LifeTraders.SharedKernal\ir.anka.LifeTraders.SharedKernal.csproj", "{B74DA4FB-4F24-4A03-8DF9-39E0CE82FD0A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.Test.Functional", "ir.anka.LifeTraders.Test.Functional\ir.anka.LifeTraders.Test.Functional.csproj", "{8874133D-7D61-43D4-88B9-D32BF38C29F7}"
 EndProject
@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.Test.In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.Test", "ir.anka.LifeTraders.Test\ir.anka.LifeTraders.Test.csproj", "{62434888-23B5-4CD0-9C9D-A88482A4A465}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.Common", "ir.anka.LifeTraders.Common\ir.anka.LifeTraders.Common.csproj", "{67B3A7DC-3984-4543-9741-6AE85A480D2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.Common", "ir.anka.LifeTraders.Common\ir.anka.LifeTraders.Common.csproj", "{67B3A7DC-3984-4543-9741-6AE85A480D2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
