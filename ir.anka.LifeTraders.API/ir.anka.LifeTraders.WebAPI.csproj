@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ir.anka.LifeTraders.Common\ir.anka.LifeTraders.Common.csproj" />
-    <ProjectReference Include="..\ir.anka.LifeTraders.Infrastructure\ir.anka.LifeTraders.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
