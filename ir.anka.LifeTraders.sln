@@ -13,6 +13,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.SharedK
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.Common", "ir.anka.LifeTraders.Common\ir.anka.LifeTraders.Common.csproj", "{67B3A7DC-3984-4543-9741-6AE85A480D2B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Trader", "Trader", "{4D1B13B2-61F0-4C05-89E6-D1F4025476B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.Trader.Core", "Trader\ir.anka.LifeTraders.Trader.Core\ir.anka.LifeTraders.Trader.Core.csproj", "{B294B29A-E6D2-47C1-A5A0-A838375E5DCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.Trader.Infrastructure", "Trader\ir.anka.LifeTraders.Trader.Infrastructure\ir.anka.LifeTraders.Trader.Infrastructure.csproj", "{AEBDAB7D-48EA-4F90-BF52-4530518338D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.Trader.Test", "Trader\ir.anka.LifeTraders.Trader.Test\ir.anka.LifeTraders.Trader.Test.csproj", "{59ADE6CB-C1BE-475F-B241-B8FCDAA6F319}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +47,26 @@ Global
 		{67B3A7DC-3984-4543-9741-6AE85A480D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67B3A7DC-3984-4543-9741-6AE85A480D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67B3A7DC-3984-4543-9741-6AE85A480D2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B294B29A-E6D2-47C1-A5A0-A838375E5DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B294B29A-E6D2-47C1-A5A0-A838375E5DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B294B29A-E6D2-47C1-A5A0-A838375E5DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B294B29A-E6D2-47C1-A5A0-A838375E5DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEBDAB7D-48EA-4F90-BF52-4530518338D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEBDAB7D-48EA-4F90-BF52-4530518338D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEBDAB7D-48EA-4F90-BF52-4530518338D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEBDAB7D-48EA-4F90-BF52-4530518338D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59ADE6CB-C1BE-475F-B241-B8FCDAA6F319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59ADE6CB-C1BE-475F-B241-B8FCDAA6F319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59ADE6CB-C1BE-475F-B241-B8FCDAA6F319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59ADE6CB-C1BE-475F-B241-B8FCDAA6F319}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B294B29A-E6D2-47C1-A5A0-A838375E5DCE} = {4D1B13B2-61F0-4C05-89E6-D1F4025476B5}
+		{AEBDAB7D-48EA-4F90-BF52-4530518338D4} = {4D1B13B2-61F0-4C05-89E6-D1F4025476B5}
+		{59ADE6CB-C1BE-475F-B241-B8FCDAA6F319} = {4D1B13B2-61F0-4C05-89E6-D1F4025476B5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {74C303D5-1102-4FF4-80DA-AAE624A95A95}
