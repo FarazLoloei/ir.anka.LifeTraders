@@ -6,4 +6,19 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Behaviours\" />
+    <Folder Include="Data\" />
+    <Folder Include="DIoC\" />
+    <Folder Include="MediatR\" />
+    <Folder Include="UnitOfWork\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="ReadModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ir.anka.LifeTraders.Common\ir.anka.LifeTraders.Common.csproj" />
+    <ProjectReference Include="..\ir.anka.LifeTraders.Trader.Core\ir.anka.LifeTraders.Trader.Core.csproj" />
+  </ItemGroup>
+
 </Project>
