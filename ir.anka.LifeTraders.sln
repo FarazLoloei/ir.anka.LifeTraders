@@ -21,6 +21,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.Trader.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.Trader.Test", "Trader\ir.anka.LifeTraders.Trader.Test\ir.anka.LifeTraders.Trader.Test.csproj", "{59ADE6CB-C1BE-475F-B241-B8FCDAA6F319}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Fund", "Fund", "{5B9040C0-B352-4529-9CAF-A27EA20E92C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.Fund.Core", "Fund\ir.anka.LifeTraders.Fund.Core\ir.anka.LifeTraders.Fund.Core.csproj", "{38A2EC6B-252A-4CD9-9C1D-BD19189DED1A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.Fund.Infrastructure", "Fund\ir.anka.LifeTraders.Fund.Infrastructure\ir.anka.LifeTraders.Fund.Infrastructure.csproj", "{0C94A005-BA7B-41AF-8945-FEE6CB011DA5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.Fund.Test", "Fund\ir.anka.LifeTraders.Fund.Test\ir.anka.LifeTraders.Fund.Test.csproj", "{98FE2482-29F5-4495-AEA9-207D9A70A00F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +67,18 @@ Global
 		{59ADE6CB-C1BE-475F-B241-B8FCDAA6F319}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59ADE6CB-C1BE-475F-B241-B8FCDAA6F319}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59ADE6CB-C1BE-475F-B241-B8FCDAA6F319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A2EC6B-252A-4CD9-9C1D-BD19189DED1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A2EC6B-252A-4CD9-9C1D-BD19189DED1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A2EC6B-252A-4CD9-9C1D-BD19189DED1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A2EC6B-252A-4CD9-9C1D-BD19189DED1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C94A005-BA7B-41AF-8945-FEE6CB011DA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C94A005-BA7B-41AF-8945-FEE6CB011DA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C94A005-BA7B-41AF-8945-FEE6CB011DA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C94A005-BA7B-41AF-8945-FEE6CB011DA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98FE2482-29F5-4495-AEA9-207D9A70A00F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98FE2482-29F5-4495-AEA9-207D9A70A00F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98FE2482-29F5-4495-AEA9-207D9A70A00F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98FE2482-29F5-4495-AEA9-207D9A70A00F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +87,9 @@ Global
 		{B294B29A-E6D2-47C1-A5A0-A838375E5DCE} = {4D1B13B2-61F0-4C05-89E6-D1F4025476B5}
 		{AEBDAB7D-48EA-4F90-BF52-4530518338D4} = {4D1B13B2-61F0-4C05-89E6-D1F4025476B5}
 		{59ADE6CB-C1BE-475F-B241-B8FCDAA6F319} = {4D1B13B2-61F0-4C05-89E6-D1F4025476B5}
+		{38A2EC6B-252A-4CD9-9C1D-BD19189DED1A} = {5B9040C0-B352-4529-9CAF-A27EA20E92C6}
+		{0C94A005-BA7B-41AF-8945-FEE6CB011DA5} = {5B9040C0-B352-4529-9CAF-A27EA20E92C6}
+		{98FE2482-29F5-4495-AEA9-207D9A70A00F} = {5B9040C0-B352-4529-9CAF-A27EA20E92C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {74C303D5-1102-4FF4-80DA-AAE624A95A95}
