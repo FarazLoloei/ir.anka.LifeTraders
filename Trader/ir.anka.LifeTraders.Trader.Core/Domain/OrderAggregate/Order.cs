@@ -1,4 +1,4 @@
-﻿using ir.anka.LifeTraders.SharedKernal; using ir.anka.LifeTraders.SharedKernal.Abstraction; using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Enums;  namespace ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate;  public class Order : EntityBase, IAggregateRoot<Order> {     public Order(string login, long ticket, PlacedType placedType, OrderType orderType, DealType dealType, string symbol,
+﻿using ir.anka.LifeTraders.SharedKernel; using ir.anka.LifeTraders.SharedKernel.Abstraction; using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Enums;  namespace ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate;  public class Order : EntityBase, IAggregateRoot<Order> {     public Order(string login, long ticket, PlacedType placedType, OrderType orderType, DealType dealType, string symbol,
         OrderState orderState, Direction direction)
     {
         Id = Guid.NewGuid();
