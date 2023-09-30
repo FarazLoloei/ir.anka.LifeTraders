@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -7,10 +7,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\" />
+    <Folder Include="Domain\AccountAggregate\Abstraction\" />
+    <Folder Include="Domain\AccountAggregate\Converters\" />
+    <Folder Include="Domain\AccountAggregate\DTOs\" />
+    <Folder Include="Domain\AccountAggregate\Exceptions\" />
+    <Folder Include="Domain\AccountAggregate\Operators\" />
+    <Folder Include="Domain\AccountAggregate\Services\" />
+    <Folder Include="Domain\OrderAggregate\DTOs\" />
+    <Folder Include="Domain\OrderAggregate\Converters\" />
+    <Folder Include="Domain\OrderAggregate\Abstraction\" />
+    <Folder Include="Domain\OrderAggregate\Services\" />
+    <Folder Include="Domain\OrderAggregate\Operators\" />
+    <Folder Include="Domain\OrderAggregate\Exceptions\" />
+    <Folder Include="Domain\UserAggregate\Abstraction\" />
+    <Folder Include="Domain\UserAggregate\Converters\" />
+    <Folder Include="Domain\UserAggregate\DTOs\" />
+    <Folder Include="Domain\UserAggregate\Exceptions\" />
+    <Folder Include="Domain\UserAggregate\Operators\" />
+    <Folder Include="Domain\UserAggregate\Services\" />
     <Folder Include="Facade\" />
     <Folder Include="ApplicationService\" />
-    <Folder Include="ReadModel\" />
   </ItemGroup>
 
   <ItemGroup>
