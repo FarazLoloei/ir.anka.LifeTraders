@@ -1,9 +1,8 @@
 ﻿using MediatR;
 
-namespace ir.anka.LifeTraders.SharedKernal
+namespace ir.anka.LifeTraders.SharedKernel;
+
+public abstract class DomainEventBase : INotification
 {
-    public abstract class DomainEventBase : INotification
-    {
-        public DateTime DateOccurred { get; protected set; } = DateTime.UtcNow;
-    }
+    public DateTime DateOccurred { get; protected set; } = DateTime.UtcNow;
 }

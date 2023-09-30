@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.SandBox
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mt4grpc", "Mt4Grpc\mt4grpc.csproj", "{32D08C8F-421A-42D4-BF75-D11C05015598}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.SharedKernal", "ir.anka.LifeTraders.SharedKernal\ir.anka.LifeTraders.SharedKernal.csproj", "{B74DA4FB-4F24-4A03-8DF9-39E0CE82FD0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.SharedKernel", "ir.anka.LifeTraders.SharedKernal\ir.anka.LifeTraders.SharedKernel.csproj", "{B74DA4FB-4F24-4A03-8DF9-39E0CE82FD0A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.Common", "ir.anka.LifeTraders.Common\ir.anka.LifeTraders.Common.csproj", "{67B3A7DC-3984-4543-9741-6AE85A480D2B}"
 EndProject

@@ -1,6 +1,5 @@
-﻿namespace ir.anka.LifeTraders.SharedKernal.Abstraction
+﻿namespace ir.anka.LifeTraders.SharedKernel.Abstraction;
+
+public interface IAggregateRoot<T> where T : EntityBase
 {
-    public interface IAggregateRoot<T> where T : EntityBase
-    {
-    }
 }

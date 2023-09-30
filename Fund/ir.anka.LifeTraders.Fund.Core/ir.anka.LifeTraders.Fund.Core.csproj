@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ir.anka.LifeTraders.SharedKernal\ir.anka.LifeTraders.SharedKernal.csproj" />
+    <ProjectReference Include="..\..\ir.anka.LifeTraders.SharedKernal\ir.anka.LifeTraders.SharedKernel.csproj" />
   </ItemGroup>
 
   <ItemGroup>

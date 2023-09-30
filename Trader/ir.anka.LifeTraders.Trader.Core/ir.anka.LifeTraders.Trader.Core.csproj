@@ -7,10 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\AccountAggregate\Abstraction\" />
     <Folder Include="Domain\AccountAggregate\Converters\" />
     <Folder Include="Domain\AccountAggregate\DTOs\" />
-    <Folder Include="Domain\AccountAggregate\Exceptions\" />
     <Folder Include="Domain\AccountAggregate\Operators\" />
     <Folder Include="Domain\AccountAggregate\Services\" />
     <Folder Include="Domain\OrderAggregate\DTOs\" />
@@ -30,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ir.anka.LifeTraders.SharedKernal\ir.anka.LifeTraders.SharedKernal.csproj" />
+    <ProjectReference Include="..\..\ir.anka.LifeTraders.SharedKernal\ir.anka.LifeTraders.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>
