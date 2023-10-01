@@ -17,12 +17,8 @@
     <Folder Include="Domain\OrderAggregate\Services\" />
     <Folder Include="Domain\OrderAggregate\Operators\" />
     <Folder Include="Domain\OrderAggregate\Exceptions\" />
-    <Folder Include="Domain\UserAggregate\Abstraction\" />
-    <Folder Include="Domain\UserAggregate\Converters\" />
-    <Folder Include="Domain\UserAggregate\DTOs\" />
-    <Folder Include="Domain\UserAggregate\Exceptions\" />
-    <Folder Include="Domain\UserAggregate\Operators\" />
-    <Folder Include="Domain\UserAggregate\Services\" />
+    <Folder Include="Domain\SharedEntities\" />
+    
     <Folder Include="Facade\" />
     <Folder Include="ApplicationService\" />
   </ItemGroup>
