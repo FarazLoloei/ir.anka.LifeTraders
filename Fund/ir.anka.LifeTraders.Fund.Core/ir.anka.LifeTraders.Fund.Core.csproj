@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <Folder Include="ApplicationService\" />
+    <Folder Include="Domain\BrokersAggregate\" />
+    <Folder Include="Domain\WalletAggregate\" />
     <Folder Include="Domain\PlanAggregate\Converters\" />
     <Folder Include="Domain\PlanAggregate\DTOs\" />
     <Folder Include="Domain\PlanAggregate\Services\" />
