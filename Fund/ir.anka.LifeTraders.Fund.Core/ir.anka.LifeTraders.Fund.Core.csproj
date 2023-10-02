@@ -7,17 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ir.anka.LifeTraders.Common\ir.anka.LifeTraders.Common.csproj" />
     <ProjectReference Include="..\..\ir.anka.LifeTraders.SharedKernal\ir.anka.LifeTraders.SharedKernel.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="ApplicationService\" />
-    <Folder Include="Domain\BrokersAggregate\" />
-    <Folder Include="Domain\WalletAggregate\" />
+    <Folder Include="Domain\BrokersAggregate\Abstraction\" />
+    <Folder Include="Domain\BrokersAggregate\Converters\" />
+    <Folder Include="Domain\BrokersAggregate\DTOs\" />
+    <Folder Include="Domain\BrokersAggregate\Exceptions\" />
     <Folder Include="Domain\PlanAggregate\Converters\" />
     <Folder Include="Domain\PlanAggregate\DTOs\" />
     <Folder Include="Domain\PlanAggregate\Services\" />
     <Folder Include="Domain\PlanAggregate\Operators\" />
+    <Folder Include="Domain\WalletAggregate\Converters\" />
     <Folder Include="Facade\" />
   </ItemGroup>
 
