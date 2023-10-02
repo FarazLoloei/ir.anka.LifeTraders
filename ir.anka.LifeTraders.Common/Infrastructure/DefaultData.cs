@@ -22,4 +22,9 @@ public abstract partial class DefaultData
     {
         public const string EXCEPTION_MESSAGE_TEMPLATE = "Creating {0} failed; Check the exception collection";
     }
+
+    public abstract partial class Regex
+    {
+        public const string IP_ADDRESS_REGEX = @"(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])";
+    }
 }
