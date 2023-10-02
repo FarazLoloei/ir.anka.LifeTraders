@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using static ir.anka.LifeTraders.Common.Infrastructure.DefaultData.Exceptions;
 
 namespace ir.anka.LifeTraders.Trader.Core.Domain.AccountAggregate.Exceptions;
 
@@ -25,5 +26,5 @@ public class AccountValidateException : Exception
 
     public override IDictionary Data => CollectExceptionsData();
 
-    public override string Message => "Creating Account failed; Check the exception collection";
+    public override string Message => string.Format(EXCEPTION_MESSAGE_TEMPLATE, "account");
 }
