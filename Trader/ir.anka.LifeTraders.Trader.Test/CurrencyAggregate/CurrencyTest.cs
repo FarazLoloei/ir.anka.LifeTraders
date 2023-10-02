@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using ir.anka.LifeTraders.Trader.Core.Domain.CurrencyAggregate;
 using ir.anka.LifeTraders.Trader.Core.Domain.CurrencyAggregate.Exceptions;
+using static ir.anka.LifeTraders.Common.Infrastructure.DefaultData.Exceptions;
 
 namespace ir.anka.LifeTraders.Trader.Test.CurrencyAggregate;
 
@@ -21,7 +22,7 @@ public class CurrencyTest : CurrencyTestProvider
     {
         Action act = () => new Currency(title, iso, symbol, order, currencyValidator.Object);
         act.Should().Throw<CurrencyValidateException>()
-                    .WithMessage("Creating currency failed; Check exception collection");
+                    .WithMessage(string.Format(EXCEPTION_MESSAGE_TEMPLATE, "currency"));
     }
 
     private void AssertCurrencyConstructorTest(string title, string iso, string symbol, int order, Currency expectedCurrency)
