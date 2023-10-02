@@ -12,9 +12,18 @@ public class Wallet : EntityBase, IAggregateRoot<Wallet>
 {
     private readonly IWalletValidator walletValidator;
 
-    public Wallet(IWalletValidator walletValidator)
+    public Wallet(string address,
+                  Network networkType,
+                  string? title,
+                  string? description,
+                  IWalletValidator walletValidator)
     {
+        Address = address;
+        NetworkType = networkType;
+        Title = title;
+        Description = description;
         this.walletValidator = walletValidator;
+        Validate();
     }
 
     protected Wallet()
