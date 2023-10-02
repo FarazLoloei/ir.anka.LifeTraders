@@ -4,21 +4,18 @@ using ir.anka.LifeTraders.SharedKernel.Abstraction;
 using ir.anka.LifeTraders.SharedKernel.Exceptions;
 using ir.anka.LifeTraders.SharedKernel.SharedValueObjects;
 using ir.anka.LifeTraders.Trader.Core.Domain.CurrencyAggregate;
-using ir.anka.LifeTraders.Trader.Core.Domain.CurrencyAggregate.Exceptions;
 using ir.anka.LifeTraders.Trader.Core.Domain.PaymentAggregate.Abstraction;
 using ir.anka.LifeTraders.Trader.Core.Domain.PaymentAggregate.Exceptions;
 
 namespace ir.anka.LifeTraders.Trader.Core.Domain.PaymentAggregate;
 
-public class Payment : EntityBase, IAggregateRoot<Currency>
+public abstract class Payment : EntityBase, IAggregateRoot<Currency>
 {
     private readonly IPaymentValidator paymentValidator;
 
     public Payment(decimal value, Guid currencyId, DateTime issueDateTime, IPaymentValidator PaymentValidator)
     {
-        Price = new Price(currencyId, value);
-        IssueDateTimeUTC = issueDateTime.ToUniversalTime();
-        paymentValidator = PaymentValidator;
+
     }
 
     protected Payment()
@@ -30,7 +27,6 @@ public class Payment : EntityBase, IAggregateRoot<Currency>
     public DateTime IssueDateTimeUTC { get; set; }
 
     public string? Comment { get; private set; }
-
 
     public void Validate()
     {
@@ -44,19 +40,14 @@ public class Payment : EntityBase, IAggregateRoot<Currency>
 
     private IEnumerable<Exception> ValidateConditions()
     {
-        //if (string.IsNullOrEmpty(Title))
-        //{
-        //    yield return new PropertyNullOrEmptyException(nameof(Title));
-        //}
+        if (Price.Value <= 0)
+        {
+            yield return new PropertyDoesNotHasValidValueException(nameof(Price));
+        }
 
-        //if (string.IsNullOrEmpty(Iso))
-        //{
-        //    yield return new PropertyNullOrEmptyException(nameof(Iso));
-        //}
-
-        //if (string.IsNullOrEmpty(Symbol))
-        //{
-        //    yield return new PropertyNullOrEmptyException(nameof(Symbol));
-        //}
+        if (IssueDateTimeUTC == DateTime.MinValue)
+        {
+            yield return new PropertyValueIsInvalidException(nameof(IssueDateTimeUTC));
+        }
     }
 }
