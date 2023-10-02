@@ -33,6 +33,4 @@ public class AccountTest : AccountTestProvider
         password.Should().Be(expectedAccount.Password);
         brokerId.Should().Be(expectedAccount.BrokerId);
     }
-
-
 }
