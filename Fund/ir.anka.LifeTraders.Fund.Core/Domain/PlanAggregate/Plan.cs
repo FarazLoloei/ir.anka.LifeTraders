@@ -5,16 +5,19 @@ using ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate.Exceptions;
 using ir.anka.LifeTraders.SharedKernel;
 using ir.anka.LifeTraders.SharedKernel.Abstraction;
 using ir.anka.LifeTraders.SharedKernel.Exceptions;
+using ir.anka.LifeTraders.SharedKernel.SharedMethods.Abstraction;
 using ir.anka.LifeTraders.SharedKernel.SharedValueObjects;
+using System.ComponentModel.DataAnnotations;
 
 namespace ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate;
 
 public class Plan : EntityBase, IAggregateRoot<Plan>
 {
     private readonly IPlanValidator planValidator;
+    private readonly ISharedValidator sharedValidator;
 
     public Plan(string title,
-                decimal accountSize,
+                double accountSize,
                 Guid currencyId,
                 Guid categoryId,
                 int numberOfPhases,
@@ -22,7 +25,7 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
                 byte maximumDailyLossPercentage,
                 byte maximumOverallLossPercentage,
                 byte minimumTradingDay,
-                int commission,
+                double commission,
                 byte profitSplitPercentage,
                 string tradingLeverage,
                 bool newsTradingAvailable,
@@ -33,7 +36,8 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
                 bool consistencyRule,
                 PayoutMethod firstPayoutMethod,
                 PayoutMethod subsequentPayouts,
-                IPlanValidator planValidator)
+                IPlanValidator planValidator,
+                ISharedValidator sharedValidator)
     {
         Id = Guid.NewGuid();
         Title = title;
@@ -56,6 +60,7 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
         FirstPayoutMethod = firstPayoutMethod;
         SubsequentPayouts = subsequentPayouts;
         this.planValidator = planValidator;
+        this.sharedValidator = sharedValidator;
         Validate();
     }
 
@@ -69,24 +74,31 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
 
     public Guid CategoryId { get; private set; }
 
+    [Range(0, int.MaxValue)]
     public int NumberOfPhases { get; private set; }
 
+    [Range(0, 100)]
     public byte PhaseProfitSharePercentage { get; private set; }
 
+    [Range(0, 100)]
     public byte MaximumDailyLossPercentage { get; private set; }
 
+    [Range(0, 100)]
     public byte MaximumOverallLossPercentage { get; set; }
 
     public DrawDownType DrawDownType { get; private set; } = DrawDownType.Balance;
 
     public IEnumerable<Phase>? Phase { get; private set; }
 
+    [Range(0, int.MaxValue)]
     public byte MinimumTradingDay { get; private set; }
 
-    public int Commission { get; private set; }
+    [Range(0, double.MaxValue)]
+    public double Commission { get; private set; }
 
     public CommissionType CommissionType { get; private set; } = CommissionType.PerLot;
 
+    [Range(0, 100)]
     public byte ProfitSplitPercentage { get; private set; }
 
     public string TradingLeverage { get; private set; }
@@ -99,6 +111,7 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
 
     public bool TradeCopierAvailable { get; private set; }
 
+    [Range(0, 100)]
     public byte ResetDiscountPercentage { get; private set; }
 
     public bool ConsistencyRule { get; private set; }
@@ -120,27 +133,18 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
     private IEnumerable<Exception> ValidateConditions()
     {
         if (string.IsNullOrEmpty(Title))
-        {
             yield return new PropertyNullOrEmptyException(nameof(Title));
-        }
 
-        foreach (var prop in this.GetType()
+        foreach (var error in sharedValidator.CheckPropertiesValueBasedOnRangeAttribute(
+                              this.GetType()
                                   .GetProperties()
-                                  .Where(x => x.Name.Contains("Percentage") && x.PropertyType == typeof(byte)))
-        {
-            byte value = (byte)(prop.GetConstantValue() ?? 0);
-            if (!(value >= 0 || value <= 100))
-                yield return new PropertyDoesNotHasValidPercentageValueException(prop.Name);
-        }
+                                  .Where(x => x.Name.Contains("Percentage") && x.PropertyType == typeof(byte))))
+            yield return error;
 
-        foreach (var prop in this.GetType()
-                                  .GetProperties()
-                                  .Where(x => !x.Name.Contains("Percentage") &&
-                                              (x.PropertyType == typeof(int) || x.PropertyType == typeof(byte))))
-        {
-            byte value = (byte)(prop.GetConstantValue() ?? 0);
-            if (value < 0)
-                yield return new PropertyDoesNotHasValidValueException(prop.Name);
-        }
+        foreach (var error in sharedValidator.CheckPropertiesValueBasedOnRangeAttribute(
+                           this.GetType()
+                               .GetProperties()
+                               .Where(x => !x.Name.Contains("Percentage") && (x.PropertyType == typeof(int) || x.PropertyType == typeof(byte)))))
+            yield return error;
     }
 }

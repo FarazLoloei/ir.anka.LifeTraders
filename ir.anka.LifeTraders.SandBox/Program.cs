@@ -115,7 +115,7 @@ public class Program
 
     private static void Api_OnOrderHistory(MT5API sender, OrderHistoryEventArgs args)
     {
-        var s = Newtonsoft.Json.JsonConvert.SerializeObject(args.Orders.Take(3));
+        var s = Newtonsoft.Json.JsonConvert.SerializeObject(args.Orders);
 
         foreach (var item in args.Orders)
             Console.WriteLine(item.Ticket
