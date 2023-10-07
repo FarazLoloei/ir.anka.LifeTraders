@@ -41,13 +41,10 @@ public abstract class Payment : EntityBase, IAggregateRoot<Currency>
     private IEnumerable<Exception> ValidateConditions()
     {
         if (Price.Value <= 0)
-        {
-            yield return new PropertyDoesNotHasValidValueException(nameof(Price));
-        }
+            yield return new PropertyDoesNotHasValidValueException(nameof(Price), 0, double.MaxValue);
+
 
         if (IssueDateTimeUTC == DateTime.MinValue)
-        {
             yield return new PropertyValueIsInvalidException(nameof(IssueDateTimeUTC));
-        }
     }
 }

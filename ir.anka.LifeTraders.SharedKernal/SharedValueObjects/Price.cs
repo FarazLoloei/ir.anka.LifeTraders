@@ -2,7 +2,7 @@
 
 public class Price : ValueObject
 {
-    public Price(Guid currencyId, decimal value)
+    public Price(Guid currencyId, double value)
     {
         CurrencyId = currencyId;
         Value = value;
@@ -10,7 +10,7 @@ public class Price : ValueObject
 
     public Guid CurrencyId { get; private set; }
 
-    public decimal Value { get; private set; }
+    public double Value { get; private set; }
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
