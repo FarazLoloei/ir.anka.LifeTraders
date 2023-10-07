@@ -13,7 +13,6 @@
     <Folder Include="Domain\AccountAggregate\Services\" />
     <Folder Include="Domain\OrderAggregate\Services\" />
     <Folder Include="Domain\OrderAggregate\Operators\" />
-    <Folder Include="Domain\OrderAggregate\Exceptions\" />
     <Folder Include="Domain\SharedEntities\" />
     
     <Folder Include="Facade\" />

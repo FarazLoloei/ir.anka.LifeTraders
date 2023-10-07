@@ -22,7 +22,10 @@ internal sealed class EmptyNullOrderTestCases : IEnumerable<object[]>
 {
     public IEnumerator<object[]> GetEnumerator()
     {
-        yield return new object[] { "", 0, PlacedType.Manually, OrderType.Buy, DealType.DealBuy, "", OrderState.Started, Direction.In };
+        yield return new object[] { "", 0, "", 0,DateTime.MinValue, 0, DateTime.MinValue,
+                                    0, 0, 0, 0, PlacedType.Manually, OrderType.Sell, DealType.DealSell, OrderState.Started, 0, 0, 0,
+                                    0, ExpirationType.GTC, FillPolicy.FillOrKill, 0, 0, 1, 0, 0, null, null, 0, DateTime.MinValue,
+                                    null, null };
     }
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

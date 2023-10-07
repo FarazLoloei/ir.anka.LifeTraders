@@ -2,9 +2,9 @@
 using ir.anka.LifeTraders.SharedKernel;
 using ir.anka.LifeTraders.SharedKernel.Abstraction;
 using ir.anka.LifeTraders.SharedKernel.Exceptions;
-using ir.anka.LifeTraders.Trader.Core.Domain.AccountAggregate.Exceptions;
 using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Abstraction;
 using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Enums;
+using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Exceptions;
 
 namespace ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate;
 
@@ -158,7 +158,7 @@ public class Order : EntityBase, IAggregateRoot<Order>
 
         if (!validateConditionsResult.IsNullOrEmpty())
         {
-            throw new AccountValidateException(validateConditionsResult);
+            throw new OrderValidateException(validateConditionsResult);
         }
     }
 
