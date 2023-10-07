@@ -2,15 +2,19 @@
 using ir.anka.LifeTraders.SharedKernel;
 using ir.anka.LifeTraders.SharedKernel.Abstraction;
 using ir.anka.LifeTraders.SharedKernel.Exceptions;
+using ir.anka.LifeTraders.SharedKernel.SharedMethods.Abstraction;
 using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Abstraction;
 using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Enums;
 using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Exceptions;
+using System.ComponentModel.DataAnnotations;
 
 namespace ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate;
 
 public class Order : EntityBase, IAggregateRoot<Order>
 {
     private readonly IOrderValidator orderValidator;
+
+    private readonly ISharedValidator sharedValidator;
 
     public Order(
         string login,
@@ -45,7 +49,8 @@ public class Order : EntityBase, IAggregateRoot<Order>
         DateTime expirationDateTime,
         OrderDeal orderDealIn,
         OrderDeal orderDealOut,
-        IOrderValidator orderValidator)
+        IOrderValidator orderValidator,
+        ISharedValidator sharedValidator)
     {
         Id = Guid.NewGuid();
         Login = login;
@@ -72,8 +77,6 @@ public class Order : EntityBase, IAggregateRoot<Order>
         Volume = volume;
         OrderDealIn = orderDealIn;
         OrderDealOut = orderDealOut;
-        this.orderValidator = orderValidator;
-        Validate();
         Profit = profit;
         ProfitRate = profitRate;
         Swap = swap;
@@ -82,6 +85,9 @@ public class Order : EntityBase, IAggregateRoot<Order>
         Comment = comment;
         RequestId = requestId;
         ExpirationDateTime = expirationDateTime;
+        this.sharedValidator = sharedValidator;
+        this.orderValidator = orderValidator;
+        Validate();
     }
 
     protected Order()
@@ -90,32 +96,43 @@ public class Order : EntityBase, IAggregateRoot<Order>
 
     public string Login { get; private set; }
 
+    [Range(0, long.MaxValue)]
     public long Ticket { get; private set; }
 
+    [Range(0, double.MaxValue)]
     public double Profit { get; private set; } = 0;
 
+    [Range(0, double.MaxValue)]
     public double ProfitRate { get; private set; } = 0;
 
+    [Range(0, double.MaxValue)]
     public double Swap { get; private set; } = 0;
 
+    [Range(0, double.MaxValue)]
     public double Commission { get; private set; } = 0;
 
+    [Range(0, double.MaxValue)]
     public double ClosePrice { get; private set; } = 0;
 
     public DateTime? CloseDateTime { get; private set; }
 
+    [Range(0, double.MaxValue)]
     public double CloseVolume { get; private set; } = 0;
 
     public string? CloseComment { get; private set; }
 
+    [Range(0, double.MaxValue)]
     public double OpenPrice { get; private set; } = 0;
 
     public DateTime OpenDateTime { get; private set; }
 
+    [Range(0, double.MaxValue)]
     public double Lots { get; private set; } = 0;
 
+    [Range(0, double.MaxValue)]
     public double ContractSize { get; private set; } = 0;
 
+    [Range(0, long.MaxValue)]
     public long ExpertId { get; private set; } = 0;
 
     public PlacedType PlacedType { get; private set; }
@@ -130,14 +147,19 @@ public class Order : EntityBase, IAggregateRoot<Order>
 
     public OrderState OrderState { get; private set; }
 
+    [Range(0, double.MaxValue)]
     public double StopLoss { get; private set; } = 0;
 
+    [Range(0, double.MaxValue)]
     public double TakeProfit { get; private set; } = 0;
 
+    [Range(0, int.MaxValue)]
     public int RequestId { get; private set; } = 0;
 
+    [Range(0, int.MaxValue)]
     public int Digits { get; private set; } = 0;
 
+    [Range(0, double.MaxValue)]
     public double StopLimitPrice { get; private set; } = 0;
 
     public ExpirationType ExpirationType { get; private set; }
@@ -146,6 +168,7 @@ public class Order : EntityBase, IAggregateRoot<Order>
 
     public FillPolicy FillPolicy { get; private set; }
 
+    [Range(0, long.MaxValue)]
     public long Volume { get; private set; } = 0;
 
     public OrderDeal OrderDealIn { get; private set; }
@@ -165,23 +188,16 @@ public class Order : EntityBase, IAggregateRoot<Order>
     private IEnumerable<Exception> ValidateConditions()
     {
         if (string.IsNullOrEmpty(Login))
-        {
             yield return new PropertyNullOrEmptyException(nameof(Login));
-        }
-
-        //if (Ticket < 1)
-        //{
-        //    yield return new PropertyDoesNotHasValidValueException(nameof(Ticket));
-        //}
 
         if (string.IsNullOrEmpty(Symbol))
-        {
             yield return new PropertyNullOrEmptyException(nameof(Symbol));
-        }
 
-        if (Ticket < 1)
+        foreach (var item in sharedValidator.CheckPropertiesValueBasedOnRangeAttribute(this,
+            new Type[] { typeof(double), typeof(int), typeof(long) }))
         {
-            yield return new PropertyValueIsInvalidException(nameof(Ticket));
+            yield return item;
         }
+        
     }
 }
