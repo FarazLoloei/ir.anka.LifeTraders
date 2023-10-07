@@ -52,7 +52,7 @@ public class OrderConverterTest : OrderTestProvider
         var order = new Order(login, ticket, symbol, openPrice, openDateTime, closePrice, closeDateTime, closeVolume, stopLoss, takeProfit,
             stopLimitPrice, placedType, orderType, dealType, orderState, lots, contractSize, expertId, digits, expirationType,
             fillPolicy, volume, profit, profitRate, swap, commission, closeComment, comment, requestId, expirationDateTime,
-            orderDealIn, orderDealOut, orderValidator.Object);
+            orderDealIn, orderDealOut, orderValidator.Object, sharedValidator.Object);
 
         var orderDto = await orderConverter.OrderToOrderDtoConverterAsync(order);
 

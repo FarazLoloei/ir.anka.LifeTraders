@@ -46,7 +46,7 @@ public class OrderTest : OrderTestProvider
     {
         var order = new Order(login, ticket, symbol, openPrice, openDateTime, closePrice, closeDateTime, closeVolume, stopLoss, takeProfit, stopLimitPrice,
             placedType, orderType, dealType, orderState, lots, contractSize, expertId, digits, expirationType, fillPolicy, volume, profit,
-            profitRate, swap, commission, closeComment, comment, requestId, expirationDateTime, orderDealIn, orderDealOut, orderValidator.Object);
+            profitRate, swap, commission, closeComment, comment, requestId, expirationDateTime, orderDealIn, orderDealOut, orderValidator.Object, sharedValidator.Object);
 
         AssertOrderConstructorTest(login, ticket, symbol, openPrice, openDateTime, closePrice, closeDateTime, closeVolume, stopLoss, takeProfit, stopLimitPrice,
             placedType, orderType, dealType, orderState, lots, contractSize, expertId, digits, expirationType, fillPolicy, volume, profit,
@@ -160,7 +160,7 @@ public class OrderTest : OrderTestProvider
     {
         Action act = () => new Order(login, ticket, symbol, openPrice, openDateTime, closePrice, closeDateTime, closeVolume, stopLoss, takeProfit, stopLimitPrice,
             placedType, orderType, dealType, orderState, lots, contractSize, expertId, digits, expirationType, fillPolicy, volume, profit,
-            profitRate, swap, commission, closeComment, comment, requestId, expirationDateTime, orderDealIn, orderDealOut, orderValidator.Object);
+            profitRate, swap, commission, closeComment, comment, requestId, expirationDateTime, orderDealIn, orderDealOut, orderValidator.Object, sharedValidator.Object);
         act.Should().Throw<OrderValidateException>()
                     .WithMessage(string.Format(EXCEPTION_MESSAGE_TEMPLATE, "order"));
     }
