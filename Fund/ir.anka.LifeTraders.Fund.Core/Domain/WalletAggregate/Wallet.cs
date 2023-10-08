@@ -5,6 +5,7 @@ using ir.anka.LifeTraders.Fund.Core.Domain.WalletAggregate.Exceptions;
 using ir.anka.LifeTraders.SharedKernel;
 using ir.anka.LifeTraders.SharedKernel.Abstraction;
 using ir.anka.LifeTraders.SharedKernel.Exceptions;
+using System.ComponentModel.DataAnnotations;
 
 namespace ir.anka.LifeTraders.Fund.Core.Domain.WalletAggregate;
 
@@ -16,6 +17,7 @@ public class Wallet : EntityBase, IAggregateRoot<Wallet>
                   Network networkType,
                   string? title,
                   string? description,
+                  int order,
                   IWalletValidator walletValidator)
     {
         Address = address;
@@ -23,6 +25,7 @@ public class Wallet : EntityBase, IAggregateRoot<Wallet>
         Title = title;
         Description = description;
         this.walletValidator = walletValidator;
+        Order = order;
         Validate();
     }
 
@@ -37,6 +40,9 @@ public class Wallet : EntityBase, IAggregateRoot<Wallet>
     public Network NetworkType { get; private set; }
 
     public string? Description { get; private set; }
+
+    [Range(0, int.MaxValue)]
+    public int Order { get; private set; }
 
     public void Validate()
     {
