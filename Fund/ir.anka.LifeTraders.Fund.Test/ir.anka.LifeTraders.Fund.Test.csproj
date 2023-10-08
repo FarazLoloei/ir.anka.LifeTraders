@@ -23,4 +23,8 @@
 		</PackageReference>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\ir.anka.LifeTraders.Fund.Core\ir.anka.LifeTraders.Fund.Core.csproj" />
+	</ItemGroup>
+
 </Project>

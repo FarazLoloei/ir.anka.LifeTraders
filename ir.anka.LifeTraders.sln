@@ -34,9 +34,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FC2B54B7-0F30-448E-BE43-E8DA32BC6A94}"
 	ProjectSection(SolutionItems) = preProject
 		SampleOrderData.txt = SampleOrderData.txt
+		ir.anka.LifeTraders.SandBox\Servers - MT5.json = ir.anka.LifeTraders.SandBox\Servers - MT5.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ir.anka.LifeTraders.Test", "ir.anka.LifeTraders.Test\ir.anka.LifeTraders.Test.csproj", "{70198B90-2273-42C4-B3B7-3D394157ABCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ir.anka.LifeTraders.Test", "ir.anka.LifeTraders.Test\ir.anka.LifeTraders.Test.csproj", "{70198B90-2273-42C4-B3B7-3D394157ABCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

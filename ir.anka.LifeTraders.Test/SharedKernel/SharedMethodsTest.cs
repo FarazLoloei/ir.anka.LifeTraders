@@ -16,7 +16,7 @@ public class SharedMethodsTest
         {
             var dummyClass = new DummyClass(33.22, DateTime.Now, "FarazLoloei", 213);
             var typesShouldBeChecked = new Type[] { typeof(int), typeof(double) };
-            var validatorMockResult = new List<PropertyDoesNotHasValidValueException>() { 
+            var validatorMockResult = new List<PropertyDoesNotHasValidValueException>() {
                 new PropertyDoesNotHasValidValueException("CommissionPercentage", 0, 100) };
 
             var validatorMock = CreateValidatorMockAndSetupIt(dummyClass, typesShouldBeChecked, validatorMockResult);
@@ -39,5 +39,18 @@ public class SharedMethodsTest
             validatorMockResult.Should().NotBeNull();
             validatorMockResult.Should().BeEquivalentTo(result);
         }
+
+        [Theory]
+        [InlineData("192.168.1.1", true)]
+        [InlineData("52.18.32.194", true)]
+        [InlineData("392.168.1.1", false)]
+        [InlineData("552.18.32.194", false)]
+        public void TestIsValidIPAddress4(string ipAddress, bool expected)
+        {
+            var result = (new SharedValidator()).IsValidIPAddress4(ipAddress);
+
+            result.Should().Be(expected);
+        }
+
     }
 }
