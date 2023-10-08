@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="ApplicationService\" />
-    <Folder Include="Domain\BrokersAggregate\Converters\" />
     <Folder Include="Domain\PlanAggregate\Converters\" />
     <Folder Include="Domain\PlanAggregate\DTOs\" />
     <Folder Include="Domain\PlanAggregate\Services\" />

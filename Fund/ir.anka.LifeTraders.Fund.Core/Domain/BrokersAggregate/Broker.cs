@@ -1,34 +1,36 @@
 ﻿using Castle.Core.Internal;
 using ir.anka.LifeTraders.Fund.Core.Domain.BrokersAggregate.Abstraction;
-using ir.anka.LifeTraders.Fund.Core.Domain.WalletAggregate.Exceptions;
+using ir.anka.LifeTraders.Fund.Core.Domain.BrokersAggregate.Exceptions;
 using ir.anka.LifeTraders.SharedKernel;
 using ir.anka.LifeTraders.SharedKernel.Abstraction;
 using ir.anka.LifeTraders.SharedKernel.Exceptions;
-using System.Text.RegularExpressions;
-using static ir.anka.LifeTraders.Common.Infrastructure.DefaultData.Regex;
+using ir.anka.LifeTraders.SharedKernel.SharedMethods.Abstraction;
+using System.ComponentModel.DataAnnotations;
 
 namespace ir.anka.LifeTraders.Fund.Core.Domain.BrokersAggregate;
 
 public class Broker : EntityBase, IAggregateRoot<Broker>
 {
-    private readonly IBrokerValidator walletValidator;
+    private readonly IBrokerValidator brokerValidator;
+    private readonly ISharedValidator sharedValidator;
 
     public Broker(string companyName,
                   string serverName,
-                  string ip,
+                  string ipAddress,
                   UInt16 port,
                   string companyLink,
                   int order,
-                  IBrokerValidator walletValidator
-        )
+                  IBrokerValidator brokerValidator,
+                  ISharedValidator sharedValidator)
     {
         CompanyName = companyName;
         ServerName = serverName;
-        IP = ip;
+        IPAddress = ipAddress;
         Port = port;
         CompanyLink = companyLink;
         Order = order;
-        this.walletValidator = walletValidator;
+        this.brokerValidator = brokerValidator;
+        this.sharedValidator = sharedValidator;
         Validate();
     }
 
@@ -36,11 +38,12 @@ public class Broker : EntityBase, IAggregateRoot<Broker>
 
     public string ServerName { get; private set; }
 
-    public string IP { get; private set; }
+    public string IPAddress { get; private set; }
 
+    [Range(0, UInt16.MaxValue)]
     public UInt16 Port { get; private set; }
 
-    public string AddressWithPort => $"{IP}:{Port}";
+    public string AddressWithPort => $"{IPAddress}:{Port}";
 
     public string CompanyLink { get; private set; }
 
@@ -51,33 +54,28 @@ public class Broker : EntityBase, IAggregateRoot<Broker>
         var validateConditionsResult = ValidateConditions();
 
         if (!validateConditionsResult.IsNullOrEmpty())
-        {
-            throw new WalletValidateException(validateConditionsResult);
-        }
+            throw new BrokerValidateException(validateConditionsResult);
     }
 
     private IEnumerable<Exception> ValidateConditions()
     {
         if (string.IsNullOrEmpty(CompanyName))
-        {
             yield return new PropertyNullOrEmptyException(nameof(CompanyName));
-        }
-        if (string.IsNullOrEmpty(ServerName))
-        {
-            yield return new PropertyNullOrEmptyException(nameof(ServerName));
-        }
-        if (string.IsNullOrEmpty(IP))
-        {
-            yield return new PropertyNullOrEmptyException(nameof(IP));
 
-            if (!string.IsNullOrEmpty(IP))
-                if (!(new Regex(IP_ADDRESS_REGEX)).Match(IP).Success)
-                    yield return new InvalidIPAddressException(nameof(IP));
+        if (string.IsNullOrEmpty(ServerName))
+            yield return new PropertyNullOrEmptyException(nameof(ServerName));
+
+        if (string.IsNullOrEmpty(IPAddress))
+            yield return new PropertyNullOrEmptyException(nameof(IPAddress));
+
+        if (!string.IsNullOrEmpty(IPAddress))
+        {
+            var result = sharedValidator.IsValidIPAddress4(IPAddress);
+            if (!result)
+                yield return new InvalidIPAddressException(nameof(IPAddress));
         }
 
         if (string.IsNullOrEmpty(CompanyLink))
-        {
             yield return new PropertyNullOrEmptyException(nameof(CompanyLink));
-        }
     }
 }

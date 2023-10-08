@@ -3,7 +3,7 @@ using ir.anka.LifeTraders.Trader.Core.Domain.CurrencyAggregate.DTOs;
 
 namespace ir.anka.LifeTraders.Trader.Core.Domain.CurrencyAggregate.Converters;
 
-public class CurrrencyConverter : ICurrencyConverter
+public class CurrencyConverter : ICurrencyConverter
 {
     public CurrencyDto CurrencyToCurrencyDtoConverter(Currency record)
     {

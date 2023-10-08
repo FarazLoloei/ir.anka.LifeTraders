@@ -6,11 +6,11 @@ namespace ir.anka.LifeTraders.Trader.Test.CurrencyAggregate
 {
     public class CurrencyConverterTest : CurrencyTestProvider
     {
-        private CurrrencyConverter currrencyConverter;
+        private CurrencyConverter currrencyConverter;
 
         public CurrencyConverterTest()
         {
-            currrencyConverter = new CurrrencyConverter();
+            currrencyConverter = new CurrencyConverter();
         }
 
         [Theory]

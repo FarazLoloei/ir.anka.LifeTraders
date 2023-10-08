@@ -8,4 +8,6 @@ public interface ISharedValidator
     public IEnumerable<PropertyDoesNotHasValidValueException> CheckPropertiesValueBasedOnRangeAttribute(object obj, Type[] validTypes);
 
     public IEnumerable<PropertyDoesNotHasValidValueException> CheckPropertiesValueBasedOnRangeAttribute(IEnumerable<PropertyInfo> properties);
+
+    public bool IsValidIPAddress4(string ipAddress);
 }

@@ -25,4 +25,17 @@ public class SharedValidator : ISharedValidator
                 yield return new PropertyDoesNotHasValidValueException(prop.Name, rangeAttributeMetaData.Minimum, rangeAttributeMetaData.Maximum);
         }
     }
+
+    public bool IsValidIPAddress4(string ipAddress)
+    {
+        if (String.IsNullOrWhiteSpace(ipAddress)) return false;
+        
+
+        string[] splitValues = ipAddress.Split('.');
+        if (splitValues.Length != 4) return false;
+
+        byte tempForParsing;
+
+        return splitValues.All(r => byte.TryParse(r, out tempForParsing));
+    }
 }
