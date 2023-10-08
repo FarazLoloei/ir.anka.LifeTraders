@@ -4,7 +4,7 @@ namespace ir.anka.LifeTraders.Fund.Core.Domain.WalletAggregate.Abstraction;
 
 public interface IWalletConverter
 {
-    public Task<WalletDto> CurrencyToCurrencyDtoConverterAsync(Wallet record);
+    public Task<WalletDto> WalletToWalletDtoConverterAsync(Wallet record);
 
-    public WalletDto CurrencyToCurrencyDtoConverter(Wallet record);
+    public WalletDto WalletToWalletDtoConverter(Wallet record);
 }

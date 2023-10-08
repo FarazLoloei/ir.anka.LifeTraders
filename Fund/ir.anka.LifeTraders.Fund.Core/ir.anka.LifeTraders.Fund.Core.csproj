@@ -15,7 +15,6 @@
     <Folder Include="ApplicationService\" />
     <Folder Include="Domain\PlanAggregate\Services\" />
     <Folder Include="Domain\PlanAggregate\Operators\" />
-    <Folder Include="Domain\WalletAggregate\Converters\" />
     <Folder Include="Facade\" />
   </ItemGroup>
 
