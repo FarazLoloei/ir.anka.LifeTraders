@@ -26,6 +26,7 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
                 byte maximumOverallLossPercentage,
                 byte minimumTradingDay,
                 double commission,
+                CommissionType commissionType,
                 byte profitSplitPercentage,
                 string tradingLeverage,
                 bool newsTradingAvailable,
@@ -36,6 +37,7 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
                 bool consistencyRule,
                 PayoutMethod firstPayoutMethod,
                 PayoutMethod subsequentPayouts,
+                int order,
                 IPlanValidator planValidator,
                 ISharedValidator sharedValidator)
     {
@@ -49,6 +51,7 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
         MaximumOverallLossPercentage = maximumOverallLossPercentage;
         MinimumTradingDay = minimumTradingDay;
         Commission = commission;
+        CommissionType = commissionType;
         ProfitSplitPercentage = profitSplitPercentage;
         TradingLeverage = tradingLeverage;
         NewsTradingAvailable = newsTradingAvailable;
@@ -59,6 +62,7 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
         ConsistencyRule = consistencyRule;
         FirstPayoutMethod = firstPayoutMethod;
         SubsequentPayouts = subsequentPayouts;
+        Order = order;
         this.planValidator = planValidator;
         this.sharedValidator = sharedValidator;
         Validate();
@@ -119,6 +123,9 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
     public PayoutMethod FirstPayoutMethod { get; private set; }
 
     public PayoutMethod SubsequentPayouts { get; private set; }
+
+    [Range(0, int.MaxValue)]
+    public int Order { get; private set; }
 
     public void Validate()
     {

@@ -14,6 +14,7 @@ public class Price : ValueObject
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
-        throw new NotImplementedException();
+        yield return CurrencyId; 
+        yield return Value;
     }
 }

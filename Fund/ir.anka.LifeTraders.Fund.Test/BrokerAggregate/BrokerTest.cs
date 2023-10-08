@@ -1,7 +1,6 @@
 ﻿using FluentAssertions;
 using ir.anka.LifeTraders.Fund.Core.Domain.BrokersAggregate;
 using ir.anka.LifeTraders.Fund.Core.Domain.BrokersAggregate.Exceptions;
-using ir.anka.LifeTraders.SharedKernel.Exceptions;
 using static ir.anka.LifeTraders.Common.Infrastructure.DefaultData.Exceptions;
 
 namespace ir.anka.LifeTraders.Fund.Test.BrokerAggregate;
