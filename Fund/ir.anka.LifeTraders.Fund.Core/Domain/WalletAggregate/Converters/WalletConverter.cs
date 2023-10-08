@@ -26,7 +26,7 @@ public class WalletConverter : IWalletConverter
              Id = record.Id,
              Title = record.Title ?? string.Empty,
              Address = record.Address,
-             Network = record.NetworkType,
+             NetworkType = record.NetworkType,
              Order = record.Order
          };
 }
