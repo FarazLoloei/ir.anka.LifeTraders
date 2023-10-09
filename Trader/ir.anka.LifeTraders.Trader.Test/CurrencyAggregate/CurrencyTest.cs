@@ -21,7 +21,7 @@ public class CurrencyTest : CurrencyTestProvider
     [ClassData(typeof(EmptyNullCurrencyTestCases))]
     public void TestCurrencyValidator(string title, string iso, string symbol, CurrencyType currencyType, int order)
     {
-        Action act = () => new Currency(title, iso, symbol,currencyType, order, currencyValidator.Object);
+        Action act = () => new Currency(title, iso, symbol, currencyType, order, currencyValidator.Object);
         act.Should().Throw<CurrencyValidateException>()
                     .WithMessage(string.Format(EXCEPTION_MESSAGE_TEMPLATE, "currency"));
     }
