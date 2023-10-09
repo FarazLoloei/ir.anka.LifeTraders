@@ -3,6 +3,7 @@ using ir.anka.LifeTraders.SharedKernel;
 using ir.anka.LifeTraders.SharedKernel.Abstraction;
 using ir.anka.LifeTraders.SharedKernel.Exceptions;
 using ir.anka.LifeTraders.Trader.Core.Domain.CurrencyAggregate.Abstraction;
+using ir.anka.LifeTraders.Trader.Core.Domain.CurrencyAggregate.Enums;
 using ir.anka.LifeTraders.Trader.Core.Domain.CurrencyAggregate.Exceptions;
 
 namespace ir.anka.LifeTraders.Trader.Core.Domain.CurrencyAggregate;
@@ -11,7 +12,7 @@ public class Currency : EntityBase, IAggregateRoot<Currency>
 {
     private readonly ICurrencyValidator currencyValidator;
 
-    public Currency(string title, string iso, string symbol, int order, ICurrencyValidator currencyValidator)
+    public Currency(string title, string iso, string symbol,CurrencyType currencytype, int order, ICurrencyValidator currencyValidator )
     {
         Id = Guid.NewGuid();
         Title = title;
@@ -19,6 +20,7 @@ public class Currency : EntityBase, IAggregateRoot<Currency>
         Symbol = symbol;
         Order = order;
         this.currencyValidator = currencyValidator;
+        Type = currencytype;
         Validate();
     }
 
@@ -35,6 +37,8 @@ public class Currency : EntityBase, IAggregateRoot<Currency>
     public string Symbol { get; private set; } = string.Empty;
 
     public int Order { get; private set; } = 0;
+
+    public CurrencyType Type { get; private set; }
 
     public void Validate()
     {
