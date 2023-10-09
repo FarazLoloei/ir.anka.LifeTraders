@@ -12,7 +12,7 @@ public class Currency : EntityBase, IAggregateRoot<Currency>
 {
     private readonly ICurrencyValidator currencyValidator;
 
-    public Currency(string title, string iso, string symbol,CurrencyType currencytype, int order, ICurrencyValidator currencyValidator )
+    public Currency(string title, string iso, string symbol, CurrencyType currencytype, int order, ICurrencyValidator currencyValidator)
     {
         Id = Guid.NewGuid();
         Title = title;
