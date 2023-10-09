@@ -1,8 +1,7 @@
 ﻿using FluentAssertions;
-using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Exceptions;
 using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate;
 using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Enums;
-using ir.anka.LifeTraders.Trader.Test.CurrencyAggregate;
+using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Exceptions;
 using static ir.anka.LifeTraders.Common.Infrastructure.DefaultData.Exceptions;
 
 namespace ir.anka.LifeTraders.Trader.Test.OrderAggregate;

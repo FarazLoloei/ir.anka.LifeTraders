@@ -3,7 +3,7 @@
 public enum OrderType
 {
     Buy = 0,
-    Sell = 1, 
+    Sell = 1,
     BuyLimit = 2,
     SellLimit = 3,
     BuyStop = 4,

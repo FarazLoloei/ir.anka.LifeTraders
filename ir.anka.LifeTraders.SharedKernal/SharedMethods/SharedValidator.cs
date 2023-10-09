@@ -29,7 +29,6 @@ public class SharedValidator : ISharedValidator
     public bool IsValidIPAddress4(string ipAddress)
     {
         if (String.IsNullOrWhiteSpace(ipAddress)) return false;
-        
 
         string[] splitValues = ipAddress.Split('.');
         if (splitValues.Length != 4) return false;

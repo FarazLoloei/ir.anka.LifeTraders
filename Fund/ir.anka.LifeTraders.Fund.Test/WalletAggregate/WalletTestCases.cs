@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate.Enums;
-using ir.anka.LifeTraders.Fund.Core.Domain.WalletAggregate.Enums;
+﻿using ir.anka.LifeTraders.Fund.Core.Domain.WalletAggregate.Enums;
+using System.Collections;
 
 namespace ir.anka.LifeTraders.Fund.Test.WalletAggregate;
-
 
 internal sealed class WalletTestCases : IEnumerable<object[]>
 {

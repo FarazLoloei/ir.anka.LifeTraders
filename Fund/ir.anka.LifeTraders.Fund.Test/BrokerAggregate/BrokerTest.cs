@@ -7,7 +7,7 @@ namespace ir.anka.LifeTraders.Fund.Test.BrokerAggregate;
 
 public class BrokerTest : BrokerTestProvider
 {
-    [Theory(Skip ="check ip field")]
+    [Theory(Skip = "check ip field")]
     [ClassData(typeof(BrokerTestCases))]
     public void TestBrokerConstructor(string companyName, string serverName, string ip, UInt16 port, string companyLink, int order)
     {

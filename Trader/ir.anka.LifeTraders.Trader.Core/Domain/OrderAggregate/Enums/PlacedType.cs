@@ -52,7 +52,6 @@ public enum PlacedType
     /// </summary>
     OnSplit = 18,
 
-
     /// <summary>
     ///     In this case API uses MT5API.PlacedType field during OrderSend and OrderClose
     /// </summary>

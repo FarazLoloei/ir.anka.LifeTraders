@@ -51,6 +51,5 @@ public class SharedMethodsTest
 
             result.Should().Be(expected);
         }
-
     }
 }

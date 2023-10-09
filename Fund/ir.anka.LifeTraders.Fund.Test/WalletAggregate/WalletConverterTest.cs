@@ -1,13 +1,7 @@
-﻿using ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate.Abstraction;
-using ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate.Converters;
-using ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate.Enums;
-using ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate;
-using ir.anka.LifeTraders.Fund.Test.PlanAggregate;
-using ir.anka.LifeTraders.SharedKernel.SharedMethods;
+﻿using FluentAssertions;
+using ir.anka.LifeTraders.Fund.Core.Domain.WalletAggregate;
 using ir.anka.LifeTraders.Fund.Core.Domain.WalletAggregate.Converters;
 using ir.anka.LifeTraders.Fund.Core.Domain.WalletAggregate.Enums;
-using ir.anka.LifeTraders.Fund.Core.Domain.WalletAggregate;
-using FluentAssertions;
 
 namespace ir.anka.LifeTraders.Fund.Test.WalletAggregate;
 

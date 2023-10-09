@@ -15,7 +15,6 @@ public abstract class Payment : EntityBase, IAggregateRoot<Currency>
 
     public Payment(decimal value, Guid currencyId, DateTime issueDateTime, IPaymentValidator PaymentValidator)
     {
-
     }
 
     protected Payment()
@@ -42,7 +41,6 @@ public abstract class Payment : EntityBase, IAggregateRoot<Currency>
     {
         if (Price.Value <= 0)
             yield return new PropertyDoesNotHasValidValueException(nameof(Price), 0, double.MaxValue);
-
 
         if (IssueDateTimeUTC == DateTime.MinValue)
             yield return new PropertyValueIsInvalidException(nameof(IssueDateTimeUTC));

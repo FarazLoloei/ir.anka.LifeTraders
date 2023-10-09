@@ -1,5 +1,4 @@
 ﻿using Castle.Core.Internal;
-using ir.anka.LifeTraders.SharedKernel.SharedMethods;
 using ir.anka.LifeTraders.SharedKernel.SharedMethods.Abstraction;
 using ir.anka.LifeTraders.Trader.Core.Domain.AccountAggregate.Exceptions;
 using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Abstraction;

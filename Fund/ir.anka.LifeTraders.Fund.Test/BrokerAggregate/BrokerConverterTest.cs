@@ -13,7 +13,7 @@ public class BrokerConverterTest : BrokerTestProvider
         brokerConverter = new BrokerConverter();
     }
 
-    [Theory(Skip ="check ip field")]
+    [Theory(Skip = "check ip field")]
     [ClassData(typeof(BrokerTestCases))]
     public async Task BrokerToBrokerDTOConverterTest(string companyName, string serverName, string ipAddress, UInt16 port, string companyLink, int order)
     {

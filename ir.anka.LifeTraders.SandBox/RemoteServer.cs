@@ -75,12 +75,10 @@ namespace ir.anka.LifeTraders.SandBox
                 try
                 {
                     var request = new HttpRequestMessage();
-                    
 
                     request.Headers.Accept.Clear();
                     request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     request.Method = method;
-                    
 
                     request.Content = new StringContent(
                         System.Text.Json.JsonSerializer.Serialize(param, typeof(object), new System.Text.Json.JsonSerializerOptions()),
@@ -109,7 +107,7 @@ namespace ir.anka.LifeTraders.SandBox
                 }
                 catch
                 {
-                    throw ;
+                    throw;
                 }
             }
         }

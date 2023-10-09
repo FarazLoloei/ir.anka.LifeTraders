@@ -1,8 +1,6 @@
-﻿using Grpc.Core;
-using Mt4Grpc;
-using mtapi.mt5;
-using System.Text.Json;
+﻿using mtapi.mt5;
 using System.Text.Json.Serialization;
+
 //using MT4 = TradingAPI.MT4Server;
 //using MT5 = TradingAPI.MT5Server;
 
@@ -12,13 +10,10 @@ public class Program
 {
     private static void Main(string[] args)
     {
-        
-    //var api = new MT5API("45.76.194.231:443", 7371, "mt5api");
-    //api.OnConnectStatus += ConnectionStatus;
-    //api.Connect();
-    //Console.WriteLine("Balance = " + api.Account().Balance);
-
-
+        //var api = new MT5API("45.76.194.231:443", 7371, "mt5api");
+        //api.OnConnectStatus += ConnectionStatus;
+        //api.Connect();
+        //Console.WriteLine("Balance = " + api.Account().Balance);
 
         //Channel channel = new Channel("mt4grpc.mtapi.io:443", ChannelCredentials.SecureSsl);
         //var connection = new Connection.ConnectionClient(channel);
@@ -43,7 +38,6 @@ public class Program
         //Console.WriteLine("AccountBalance: " + res.Result.Balance);
         //channel.ShutdownAsync().Wait();
 
-
         //Console.WriteLine("Hello, World!");
         //TradingAPI.MT4Server.QuoteClient quoteClient = new TradingAPI.MT4Server.QuoteClient(444413537, "uEgqH1_q", "78.46.174.221", 443);
         //foreach (var item in quoteClient.DownloadOrderHistory(DateTime.Now.AddMonths(-10), DateTime.Now.AddDays(1)))
@@ -64,8 +58,6 @@ public class Program
         Console.WriteLine("Press any key...");
         Console.ReadKey();
 
-
-
         //        var remoteServer = new RemoteServer($"https://mt-market-data-client-api-v1.new-york.agiliumtrade.ai");
         //        var accountId = "d0e64d28-3ae3-416b-adb5-af8bc37d82ff";
         //        var _args = new args()
@@ -84,7 +76,6 @@ public class Program
 
     private static void Api_OnOrderProgress(MT5API sender, OrderProgress progress)
     {
-        
         throw new NotImplementedException();
     }
 
@@ -128,11 +119,7 @@ public class Program
             sender.RequestOrderHistory(args.Orders.Last().CloseTime, DateTime.Now);
         }
     }
-
-
 }
-
-
 
 //Demo Account Info
 //Username: 5016640277
@@ -147,4 +134,3 @@ public class Program
 //Login    : 5016640277
 //Password : V!8pBqIt
 //Investor : NxJsWe!8
-

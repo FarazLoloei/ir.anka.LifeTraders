@@ -6,7 +6,7 @@ public class SharedMethodsTestCases
 {
     public class DummyClass
     {
-        public DummyClass(double orderId, DateTime orderDate, 
+        public DummyClass(double orderId, DateTime orderDate,
             string customerName, int commissionPercentage)
         {
             OrderId = orderId;

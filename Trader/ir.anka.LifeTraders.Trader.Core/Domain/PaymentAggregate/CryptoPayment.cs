@@ -27,7 +27,6 @@ public class CryptoPayment : Payment
 
     protected CryptoPayment()
     {
-        
     }
 
     public string TransactionHash { get; private set; }

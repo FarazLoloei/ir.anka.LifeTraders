@@ -3,7 +3,7 @@ using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Enums;
 
 namespace ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.DTOs;
 
-public record struct OrderDto(Guid Id, 
+public record struct OrderDto(Guid Id,
                               string login,
                               long ticket,
                               string symbol,

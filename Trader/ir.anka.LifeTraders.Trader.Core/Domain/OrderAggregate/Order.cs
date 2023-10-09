@@ -198,6 +198,5 @@ public class Order : EntityBase, IAggregateRoot<Order>
         {
             yield return item;
         }
-        
     }
 }
