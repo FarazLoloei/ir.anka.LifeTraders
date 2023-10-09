@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using ir.anka.LifeTraders.Trader.Core.Domain.CurrencyAggregate;
 using ir.anka.LifeTraders.Trader.Core.Domain.CurrencyAggregate.Converters;
+using ir.anka.LifeTraders.Trader.Core.Domain.CurrencyAggregate.Enums;
 
 namespace ir.anka.LifeTraders.Trader.Test.CurrencyAggregate
 {
@@ -15,9 +16,9 @@ namespace ir.anka.LifeTraders.Trader.Test.CurrencyAggregate
 
         [Theory]
         [ClassData(typeof(CurrencyTestCases))]
-        public async Task CurrencyToCurrencyDTOConverterTest(string title, string iso, string symbol, int order)
+        public async Task CurrencyToCurrencyDTOConverterTest(string title, string iso, string symbol, CurrencyType currencyType, int order)
         {
-            var currency = new Currency(title, iso, symbol, order, currencyValidator.Object);
+            var currency = new Currency(title, iso, symbol, currencyType, order, currencyValidator.Object);
 
             var currencyDto = await currrencyConverter.CurrencyToCurrencyDtoConverterAsync(currency);
 
