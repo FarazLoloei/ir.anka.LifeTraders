@@ -28,8 +28,6 @@
 	</ItemGroup>
 	
   <ItemGroup>
-    <Folder Include="Behaviours\" />
-    <Folder Include="Data\" />
     <Folder Include="DIoC\" />
     <Folder Include="MediatR\" />
     <Folder Include="UnitOfWork\" />
