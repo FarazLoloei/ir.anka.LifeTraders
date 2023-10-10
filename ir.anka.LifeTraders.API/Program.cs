@@ -8,10 +8,10 @@ using ir.anka.LifeTraders.WebAPI.Infrastructure;
 using Serilog;
 using static ir.anka.LifeTraders.Common.Infrastructure.DefaultData.General;
 
-using ProjectInfrastructureFund = ir.anka.LifeTraders.Fund.Infrastructure;
-using ProjectInfrastructureTrader = ir.anka.LifeTraders.Trader.Infrastructure;
+using FundInfrastructure = ir.anka.LifeTraders.Fund.Infrastructure;
+using TraderInfrastructure = ir.anka.LifeTraders.Trader.Infrastructure;
 
-//using ProjectInfrastructure = ir.anka.LifeTraders.Dun.Infrastructure;
+namespace ir.anka.LifeTraders.WebAPI;
 
 public class Program
 {
@@ -49,10 +49,13 @@ public class Program
 
         builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
         {
-            //Trader.Core.ModulesBootstrapper.RegisterModules(containerBuilder);
-            ProjectInfrastructureFund.ModulesBootstrapper.RegisterModules(containerBuilder, builder.Environment.EnvironmentName);
-            ProjectInfrastructureTrader.ModulesBootstrapper.RegisterModules(containerBuilder, builder.Environment.EnvironmentName);
-            //WebAPI.ModulesBootstrapper.RegisterModules(containerBuilder);
+            Trader.Core.ModulesBootstrapper.RegisterModules(containerBuilder);
+            Fund.Core.ModulesBootstrapper.RegisterModules(containerBuilder);
+
+            FundInfrastructure.ModulesBootstrapper.RegisterModules(containerBuilder, builder.Environment.EnvironmentName);
+            TraderInfrastructure.ModulesBootstrapper.RegisterModules(containerBuilder, builder.Environment.EnvironmentName);
+
+            ModulesBootstrapper.RegisterModules(containerBuilder);
         });
 
         //builder.Services.AddAuthentication();
@@ -79,10 +82,3 @@ public class Program
         app.Run();
     }
 }
-
-//var builder = WebApplication.CreateBuilder(args);
-//var app = builder.Build();
-
-//app.MapGet("/", () => "Hello World!");
-
-//app.Run();

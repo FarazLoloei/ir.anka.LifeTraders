@@ -1,12 +1,13 @@
 ﻿using Autofac;
+using ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate;
+using ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate.Abstraction;
+using ir.anka.LifeTraders.Fund.Infrastructure.Data;
+using ir.anka.LifeTraders.Fund.Infrastructure.Repositories.PlanAggregate;
 using ir.anka.LifeTraders.SharedKernel;
 using ir.anka.LifeTraders.SharedKernel.Abstraction;
-using ir.anka.LifeTraders.Fund.Infrastructure.Data;
 using System.Reflection;
 using static ir.anka.LifeTraders.Common.Infrastructure.DefaultData.Environment;
 using Module = Autofac.Module;
-using ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate;
-using ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate.Abstraction;
 
 namespace ir.anka.LifeTraders.Fund.Infrastructure.DIoC;
 
@@ -30,19 +31,16 @@ public class InfrastructureModuleBuilder : Module
     private void InitializeDefaultValues(Assembly? callingAssembly, Assembly? coreAssembly, Assembly? infrastructureAssembly)
     {
         if (coreAssembly != null)
-        {
+
             _assemblies.Add(coreAssembly);
-        }
 
         if (infrastructureAssembly != null)
-        {
+
             _assemblies.Add(infrastructureAssembly);
-        }
 
         if (callingAssembly != null)
-        {
+
             _assemblies.Add(callingAssembly);
-        }
     }
 
     protected override void Load(ContainerBuilder builder)
