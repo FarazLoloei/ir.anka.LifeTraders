@@ -6,6 +6,7 @@ using System.Reflection;
 using static ir.anka.LifeTraders.Common.Infrastructure.DefaultData.Environment;
 using Module = Autofac.Module;
 using ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate;
+using ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate.Abstraction;
 
 namespace ir.anka.LifeTraders.Fund.Infrastructure.DIoC;
 

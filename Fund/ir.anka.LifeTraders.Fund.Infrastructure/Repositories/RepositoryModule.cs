@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate.Abstraction;
 
 namespace ir.anka.LifeTraders.Fund.Infrastructure.Repositories;
 

@@ -11,11 +11,4 @@
     <ProjectReference Include="..\..\ir.anka.LifeTraders.SharedKernal\ir.anka.LifeTraders.SharedKernel.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ApplicationService\" />
-    <Folder Include="Domain\PlanAggregate\Services\" />
-    <Folder Include="Domain\PlanAggregate\Operators\" />
-    <Folder Include="Facade\" />
-  </ItemGroup>
-
 </Project>
