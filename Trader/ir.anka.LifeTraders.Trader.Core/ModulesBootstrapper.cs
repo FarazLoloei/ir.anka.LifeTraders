@@ -1,6 +1,12 @@
-﻿namespace ir.anka.LifeTraders.Trader.Core
+﻿using Autofac;
+
+namespace ir.anka.LifeTraders.Trader.Core;
+
+public class ModulesBootstrapper
 {
-    internal class ModulesBootstrapper
+    public static void RegisterModules(ContainerBuilder containerBuilder)
     {
+        //containerBuilder.RegisterModule(new FacadeModule());
+        //containerBuilder.RegisterModule(new CurrencyModule());
     }
 }

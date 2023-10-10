@@ -11,5 +11,6 @@ public abstract class Command : IRequest
 
     private DateTime timeStamp;
 
-    public DateTime TimeStamp { get { return timeStamp; } }
+    public DateTime TimeStamp
+    { get { return timeStamp; } }
 }

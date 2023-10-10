@@ -31,7 +31,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\Fund\ir.anka.LifeTraders.Fund.Infrastructure\ir.anka.LifeTraders.Fund.Infrastructure.csproj" />
 		<ProjectReference Include="..\ir.anka.LifeTraders.Common\ir.anka.LifeTraders.Common.csproj" />
+		<ProjectReference Include="..\Trader\ir.anka.LifeTraders.Trader.Infrastructure\ir.anka.LifeTraders.Trader.Infrastructure.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Controllers\" />
 	</ItemGroup>
 
 </Project>

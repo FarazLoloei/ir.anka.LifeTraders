@@ -28,10 +28,7 @@
 	</ItemGroup>
 	
   <ItemGroup>
-    <Folder Include="DIoC\" />
-    <Folder Include="MediatR\" />
     <Folder Include="UnitOfWork\" />
-    <Folder Include="Repositories\" />
     <Folder Include="ReadModel\" />
   </ItemGroup>
 

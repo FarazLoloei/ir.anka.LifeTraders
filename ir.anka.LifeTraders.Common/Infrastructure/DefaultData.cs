@@ -21,6 +21,7 @@ public abstract partial class DefaultData
     public abstract partial class Exceptions
     {
         public const string EXCEPTION_MESSAGE_TEMPLATE = "Creating {0} failed; Check the exception collection";
+        public const string NOT_FOUND_EXCEPTION_MESSAGE_TEMPLATE = "{0} not found";
     }
 
     public abstract partial class Regex
