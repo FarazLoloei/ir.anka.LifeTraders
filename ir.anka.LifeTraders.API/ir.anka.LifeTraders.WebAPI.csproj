@@ -36,8 +36,4 @@
 		<ProjectReference Include="..\Trader\ir.anka.LifeTraders.Trader.Infrastructure\ir.anka.LifeTraders.Trader.Infrastructure.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Controllers\" />
-	</ItemGroup>
-
 </Project>
