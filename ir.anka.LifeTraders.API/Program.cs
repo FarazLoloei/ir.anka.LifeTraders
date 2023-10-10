@@ -45,7 +45,7 @@ public class Program
         builder.Services.AddFundDbContext(connectionString!);
 
         builder.Services.AddFluentValidationAutoValidation()
-                    .AddFluentValidationClientsideAdapters();
+                        .AddFluentValidationClientsideAdapters();
 
         builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
         {

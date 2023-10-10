@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using FluentValidation;
 using ir.anka.LifeTraders.Trader.Core.ApplicationService.CurrencyApplication.Commands;
-using ir.anka.LifeTraders.WebAPI.DTOs.Validations;
+using ir.anka.LifeTraders.WebAPI.DTOs.Validations.Trader.Currency;
 
 namespace ir.anka.LifeTraders.WebAPI.Infrastructure;
 

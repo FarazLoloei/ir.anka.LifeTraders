@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using ir.anka.LifeTraders.Trader.Core.ApplicationService.CurrencyApplication.Commands;
 
-namespace ir.anka.LifeTraders.WebAPI.DTOs.Validations;
+namespace ir.anka.LifeTraders.WebAPI.DTOs.Validations.Trader.Currency;
 
 public class CurrencyCreateCommandValidation : AbstractValidator<CurrencyCreateCommand>
 {
