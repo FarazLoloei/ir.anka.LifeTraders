@@ -3,12 +3,12 @@ using MediatR;
 
 namespace ir.anka.LifeTraders.Trader.Infrastructure.Behaviours;
 
-public class DatabaseTransactionPiplineBehaviour<TRequest, TResponse>
+public class DatabaseTransactionPipelineBehaviour<TRequest, TResponse>
     : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
 {
     private readonly ApplicationDbContext dbContext;
 
-    public DatabaseTransactionPiplineBehaviour(ApplicationDbContext applicationContext)
+    public DatabaseTransactionPipelineBehaviour(ApplicationDbContext applicationContext)
     {
         dbContext = applicationContext;
     }

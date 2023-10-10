@@ -14,9 +14,6 @@
     <Folder Include="Domain\OrderAggregate\Services\" />
     <Folder Include="Domain\OrderAggregate\Operators\" />
     <Folder Include="Domain\SharedEntities\" />
-    
-    <Folder Include="Facade\" />
-    <Folder Include="ApplicationService\" />
   </ItemGroup>
 
   <ItemGroup>
