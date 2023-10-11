@@ -2,9 +2,21 @@
 
 namespace ir.anka.LifeTraders.Fund.Core.Domain.PlanAggregate;
 
-public class Phase : EntityBase
+public class Phase : ValueObject
 {
-    public byte ProfitTarget { get; set; }
+    public Phase(byte profitTarget, int timeLimitInDays)
+    {
+        ProfitTarget = profitTarget;
+        TimeLimitInDays = timeLimitInDays;
+    }
 
-    public int TimeLimitInDays { get; set; }
+    public byte ProfitTarget { get; private set; }
+
+    public int TimeLimitInDays { get; private set; }
+
+    protected override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return ProfitTarget;
+        yield return TimeLimitInDays;
+    }
 }
