@@ -18,16 +18,14 @@ public class SharedValidator : ISharedValidator
     {
         foreach (var prop in properties)
         {
+            var valueWithoutSpecificType = prop.GetValue(obj) ?? 0;
+            Type propertyType = prop.PropertyType;
+            Type realPropertyType = Nullable.GetUnderlyingType(propertyType) ?? propertyType;
+            dynamic propValue = Convert.ChangeType(valueWithoutSpecificType, realPropertyType);
 
-            dynamic value = prop.GetValue(obj) ?? 0;
-            if (value is int || value is byte || value is Int32 || value is long)
-                value = Convert.ToInt64(value);
-
-            if (value is double || value is float)
-                value = Convert.ToDouble(value);
 
             var rangeAttributeMetaData = prop.GetCustomAttributes<RangeAttribute>(false).First();
-            if (!(value >= double.Parse(rangeAttributeMetaData.Minimum.ToString()!) || value <= double.Parse(rangeAttributeMetaData.Maximum.ToString()!)))
+            if (!(propValue >= double.Parse(rangeAttributeMetaData.Minimum.ToString()!) || propValue <= double.Parse(rangeAttributeMetaData.Maximum.ToString()!)))
                 yield return new PropertyDoesNotHasValidValueException(prop.Name, rangeAttributeMetaData.Minimum, rangeAttributeMetaData.Maximum);
         }
     }
