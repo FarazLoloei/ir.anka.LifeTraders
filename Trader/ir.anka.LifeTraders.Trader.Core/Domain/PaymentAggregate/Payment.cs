@@ -11,8 +11,14 @@ public abstract class Payment : EntityBase, IAggregateRoot<Currency>
 {
     private readonly IPaymentValidator paymentValidator;
 
-    public Payment(double value, Guid currencyId, DateTime issueDateTime, PaymentStatus paymentStatus, IPaymentValidator paymentValidator)
+    public Payment(Guid userId,
+                   double value, 
+                   Guid currencyId, 
+                   DateTime issueDateTime, 
+                   PaymentStatus paymentStatus, 
+                   IPaymentValidator paymentValidator)
     {
+        UserId = userId;
         Price = new Price(currencyId, value);
         IssueDateTimeUTC = issueDateTime.ToUniversalTime();
         PaymentStatus = paymentStatus;
@@ -23,6 +29,8 @@ public abstract class Payment : EntityBase, IAggregateRoot<Currency>
     {
     }
 
+    public Guid UserId { get; private set; }
+
     public Price Price { get; private set; }
 
     public DateTime IssueDateTimeUTC { get; private set; }
@@ -30,4 +38,6 @@ public abstract class Payment : EntityBase, IAggregateRoot<Currency>
     public string? Comment { get; private set; }
 
     public PaymentStatus PaymentStatus { get; private set; }
+
+
 }

@@ -16,14 +16,37 @@ public class OrderDeal
     {
     }
 
-    public OrderDeal(long ticketNumber,
-        long orderTicket, string symbol, OrderType type, Direction direction,
-        double openPrice, double price, double stopLoss, double takeProfit,
-        double volume, double profit, double profitRate, double volumeRate,
-        double commission, double swap, int expertId, long positionTicket, string comment,
-        double contractSize, int digits, int moneyDigits, double freeProfit, double trailRounder,
-        PlacedType placedType, DateTime openTimeAsDateTime, double lots, IOrderValidator orderValidator, ISharedValidator sharedValidator)
+    public OrderDeal(Guid orderId,
+                     long ticketNumber,
+                     long orderTicket,
+                     string symbol,
+                     OrderType type,
+                     Direction direction,
+                     double openPrice,
+                     double price,
+                     double stopLoss,
+                     double takeProfit,
+                     double volume,
+                     double profit,
+                     double profitRate,
+                     double volumeRate,
+                     double commission,
+                     double swap,
+                     int expertId,
+                     long positionTicket,
+                     string comment,
+                     double contractSize,
+                     int digits,
+                     int moneyDigits,
+                     double freeProfit,
+                     double trailRounder,
+                     PlacedType placedType,
+                     DateTime openTimeAsDateTime,
+                     double lots,
+                     IOrderValidator orderValidator,
+                     ISharedValidator sharedValidator)
     {
+        OrderId = orderId;
         TicketNumber = ticketNumber;
         OrderTicket = orderTicket;
         Symbol = symbol;
@@ -55,6 +78,8 @@ public class OrderDeal
 
         Validate();
     }
+
+    public Guid OrderId { get; private set; }
 
     [Range(0, long.MaxValue)]
     public long TicketNumber { get; private set; }
