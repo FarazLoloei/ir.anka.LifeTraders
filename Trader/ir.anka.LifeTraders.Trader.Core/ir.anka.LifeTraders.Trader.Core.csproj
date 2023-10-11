@@ -11,7 +11,6 @@
     <Folder Include="Domain\AccountAggregate\DTOs\" />
     <Folder Include="Domain\AccountAggregate\Operators\" />
     <Folder Include="Domain\AccountAggregate\Services\" />
-    <Folder Include="Domain\OrderAggregate\Services\" />
     <Folder Include="Domain\OrderAggregate\Operators\" />
     <Folder Include="Domain\SharedEntities\" />
   </ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using Castle.Core.Internal;
+using ir.anka.LifeTraders.SharedKernel;
 using ir.anka.LifeTraders.SharedKernel.SharedMethods.Abstraction;
 using ir.anka.LifeTraders.Trader.Core.Domain.AccountAggregate.Exceptions;
 using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Abstraction;
@@ -7,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate;
 
-public class OrderDeal
+public class OrderDeal: EntityBase
 {
     private readonly IOrderValidator orderValidator;
     private readonly ISharedValidator sharedValidator;
@@ -46,6 +47,7 @@ public class OrderDeal
                      IOrderValidator orderValidator,
                      ISharedValidator sharedValidator)
     {
+        Id = Guid.NewGuid();
         OrderId = orderId;
         TicketNumber = ticketNumber;
         OrderTicket = orderTicket;
@@ -84,7 +86,7 @@ public class OrderDeal
     [Range(0, long.MaxValue)]
     public long TicketNumber { get; private set; }
 
-    public string Id { get; set; } = string.Empty;
+    public string externalId { get; set; } = string.Empty;
 
     [Range(0, long.MaxValue)]
     public long OrderTicket { get; private set; }

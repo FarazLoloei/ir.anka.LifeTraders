@@ -83,7 +83,9 @@ public class Order : EntityBase, IAggregateRoot<Order>
         CloseComment = closeComment;
         Comment = comment;
         RequestId = requestId;
+        OrderDealInId = orderDealIn.Id;
         OrderDealIn = orderDealIn;
+        OrderDealOutId = orderDealOut?.Id;
         OrderDealOut = orderDealOut;
         ExpirationDateTime = expirationDateTime;
         this.sharedValidator = sharedValidator;

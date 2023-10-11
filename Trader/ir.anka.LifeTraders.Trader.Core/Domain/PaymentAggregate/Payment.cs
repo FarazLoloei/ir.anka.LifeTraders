@@ -18,6 +18,7 @@ public abstract class Payment : EntityBase, IAggregateRoot<Currency>
                    PaymentStatus paymentStatus, 
                    IPaymentValidator paymentValidator)
     {
+        Id = Guid.NewGuid();
         UserId = userId;
         Price = new Price(currencyId, value);
         IssueDateTimeUTC = issueDateTime.ToUniversalTime();
