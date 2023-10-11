@@ -9,7 +9,7 @@ public static class StartupBootstraper
     public static void AddFundDbContext(this IServiceCollection services, string connectionString)
     {
         services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlite(connectionString)
+            options.UseNpgsql(connectionString)//.UseSqlite(connectionString)
         );
     }
 }

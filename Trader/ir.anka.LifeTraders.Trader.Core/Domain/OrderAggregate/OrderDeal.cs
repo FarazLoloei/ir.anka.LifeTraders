@@ -16,7 +16,7 @@ public class OrderDeal
     {
     }
 
-    public OrderDeal(long ticketNumber, long login,
+    public OrderDeal(long ticketNumber,
         long orderTicket, string symbol, OrderType type, Direction direction,
         double openPrice, double price, double stopLoss, double takeProfit,
         double volume, double profit, double profitRate, double volumeRate,
@@ -25,7 +25,6 @@ public class OrderDeal
         PlacedType placedType, DateTime openTimeAsDateTime, double lots, IOrderValidator orderValidator, ISharedValidator sharedValidator)
     {
         TicketNumber = ticketNumber;
-        Login = login;
         OrderTicket = orderTicket;
         Symbol = symbol;
         Type = type;
@@ -61,9 +60,6 @@ public class OrderDeal
     public long TicketNumber { get; private set; }
 
     public string Id { get; set; } = string.Empty;
-
-    [Range(0, long.MaxValue)]
-    public long Login { get; private set; }
 
     [Range(0, long.MaxValue)]
     public long OrderTicket { get; private set; }
