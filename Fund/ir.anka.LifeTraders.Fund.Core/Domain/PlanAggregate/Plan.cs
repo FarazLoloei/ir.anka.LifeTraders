@@ -78,7 +78,7 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
 
     public Guid CategoryId { get; private set; }
 
-    [Range(0, int.MaxValue)]
+    [Range(1, int.MaxValue)]
     public int NumberOfPhases { get; private set; }
 
     [Range(0, 100)]
