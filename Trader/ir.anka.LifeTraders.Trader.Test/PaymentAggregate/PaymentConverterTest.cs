@@ -16,10 +16,10 @@ public class PaymentConverterTest : PaymentTestProvider
 
     [Theory]
     [ClassData(typeof(CryptoPaymentTestCases))]
-    public async Task CryptoPaymentToOrdeCryptoPaymentDTOConverterTest(double value, Guid currencyId, DateTime issueDateTime, PaymentStatus paymentStatus,
+    public async Task CryptoPaymentToOrdeCryptoPaymentDTOConverterTest(Guid userId, double value, Guid currencyId, DateTime issueDateTime, PaymentStatus paymentStatus,
         string transactionHash, Guid destinationWalletId, string sourceWalletAddress)
     {
-        var cryptoPayment = new CryptoPayment(value, currencyId, issueDateTime, paymentStatus, transactionHash, destinationWalletId,
+        var cryptoPayment = new CryptoPayment(userId, value, currencyId, issueDateTime, paymentStatus, transactionHash, destinationWalletId,
             sourceWalletAddress, paymentValidator.Object);
 
         var cryptoPaymentDto = await paymentConverter.CryptoPaymentToCryptoPaymentDtoConverterAsync(cryptoPayment);

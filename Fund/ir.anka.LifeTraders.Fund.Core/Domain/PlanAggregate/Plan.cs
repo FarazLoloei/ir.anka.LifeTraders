@@ -92,7 +92,7 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
 
     public DrawDownType DrawDownType { get; private set; } = DrawDownType.Balance;
 
-    public IEnumerable<Phase>? Phase { get; private set; }
+    public List<Phase>? Phase { get; private set; }
 
     [Range(0, int.MaxValue)]
     public byte MinimumTradingDay { get; private set; }
@@ -142,13 +142,13 @@ public class Plan : EntityBase, IAggregateRoot<Plan>
         if (string.IsNullOrEmpty(Title))
             yield return new PropertyNullOrEmptyException(nameof(Title));
 
-        foreach (var error in sharedValidator.CheckPropertiesValueBasedOnRangeAttribute(
+        foreach (var error in sharedValidator.CheckPropertiesValueBasedOnRangeAttribute(this,
                               this.GetType()
                                   .GetProperties()
                                   .Where(x => x.Name.Contains("Percentage") && x.PropertyType == typeof(byte))))
             yield return error;
 
-        foreach (var error in sharedValidator.CheckPropertiesValueBasedOnRangeAttribute(
+        foreach (var error in sharedValidator.CheckPropertiesValueBasedOnRangeAttribute(this,
                            this.GetType()
                                .GetProperties()
                                .Where(x => !x.Name.Contains("Percentage") && (x.PropertyType == typeof(int) || x.PropertyType == typeof(byte)))))

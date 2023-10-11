@@ -11,15 +11,16 @@ public class CryptoPayment : Payment
 {
     private readonly IPaymentValidator paymentValidator;
 
-    public CryptoPayment(double value,
-        Guid currencyId,
-        DateTime issueDateTime,
-        PaymentStatus paymentStatus,
-        string transactionHash,
-        Guid destinationWalletId,
-        string sourceWalletAddress,
-        IPaymentValidator paymentValidator)
-        : base(value, currencyId, issueDateTime, paymentStatus, paymentValidator)
+    public CryptoPayment(Guid userId,
+                         double value,
+                         Guid currencyId,
+                         DateTime issueDateTime,
+                         PaymentStatus paymentStatus,
+                         string transactionHash,
+                         Guid destinationWalletId,
+                         string sourceWalletAddress,
+                         IPaymentValidator paymentValidator)
+        : base(userId, value, currencyId, issueDateTime, paymentStatus, paymentValidator)
     {
         TransactionHash = transactionHash;
         DestinationWalletId = destinationWalletId;

@@ -23,6 +23,7 @@ public class Wallet : EntityBase, IAggregateRoot<Wallet>
                   IWalletValidator walletValidator,
                   ISharedValidator sharedValidator)
     {
+        Id = Guid.NewGuid();
         Address = address;
         NetworkType = networkType;
         Title = title;

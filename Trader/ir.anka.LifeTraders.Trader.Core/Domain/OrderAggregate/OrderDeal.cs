@@ -1,4 +1,5 @@
 ﻿using Castle.Core.Internal;
+using ir.anka.LifeTraders.SharedKernel;
 using ir.anka.LifeTraders.SharedKernel.SharedMethods.Abstraction;
 using ir.anka.LifeTraders.Trader.Core.Domain.AccountAggregate.Exceptions;
 using ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate.Abstraction;
@@ -7,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ir.anka.LifeTraders.Trader.Core.Domain.OrderAggregate;
 
-public class OrderDeal
+public class OrderDeal: EntityBase
 {
     private readonly IOrderValidator orderValidator;
     private readonly ISharedValidator sharedValidator;
@@ -16,14 +17,38 @@ public class OrderDeal
     {
     }
 
-    public OrderDeal(long ticketNumber,
-        long orderTicket, string symbol, OrderType type, Direction direction,
-        double openPrice, double price, double stopLoss, double takeProfit,
-        double volume, double profit, double profitRate, double volumeRate,
-        double commission, double swap, int expertId, long positionTicket, string comment,
-        double contractSize, int digits, int moneyDigits, double freeProfit, double trailRounder,
-        PlacedType placedType, DateTime openTimeAsDateTime, double lots, IOrderValidator orderValidator, ISharedValidator sharedValidator)
+    public OrderDeal(Guid orderId,
+                     long ticketNumber,
+                     long orderTicket,
+                     string symbol,
+                     OrderType type,
+                     Direction direction,
+                     double openPrice,
+                     double price,
+                     double stopLoss,
+                     double takeProfit,
+                     double volume,
+                     double profit,
+                     double profitRate,
+                     double volumeRate,
+                     double commission,
+                     double swap,
+                     int expertId,
+                     long positionTicket,
+                     string comment,
+                     double contractSize,
+                     int digits,
+                     int moneyDigits,
+                     double freeProfit,
+                     double trailRounder,
+                     PlacedType placedType,
+                     DateTime openTimeAsDateTime,
+                     double lots,
+                     IOrderValidator orderValidator,
+                     ISharedValidator sharedValidator)
     {
+        Id = Guid.NewGuid();
+        OrderId = orderId;
         TicketNumber = ticketNumber;
         OrderTicket = orderTicket;
         Symbol = symbol;
@@ -56,10 +81,12 @@ public class OrderDeal
         Validate();
     }
 
+    public Guid OrderId { get; private set; }
+
     [Range(0, long.MaxValue)]
     public long TicketNumber { get; private set; }
 
-    public string Id { get; set; } = string.Empty;
+    public string externalId { get; set; } = string.Empty;
 
     [Range(0, long.MaxValue)]
     public long OrderTicket { get; private set; }

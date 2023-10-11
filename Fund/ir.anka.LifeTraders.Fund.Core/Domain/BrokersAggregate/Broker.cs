@@ -23,6 +23,7 @@ public class Broker : EntityBase, IAggregateRoot<Broker>
                   IBrokerValidator brokerValidator,
                   ISharedValidator sharedValidator)
     {
+        Id = Guid.NewGuid();
         CompanyName = companyName;
         ServerName = serverName;
         IPAddress = ipAddress;

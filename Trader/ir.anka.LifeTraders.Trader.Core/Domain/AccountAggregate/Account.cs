@@ -11,9 +11,10 @@ public class Account : EntityBase, IAggregateRoot<Account>
 {
     private readonly IAccountValidator accountValidator;
 
-    public Account(string username, string password, Guid brokerId, IAccountValidator accountValidator)
+    public Account(Guid userId, string username, string password, Guid brokerId, IAccountValidator accountValidator)
     {
         Id = Guid.NewGuid();
+        UserId = userId;
         Username = username;
         Password = password;
         BrokerId = brokerId;
@@ -24,6 +25,8 @@ public class Account : EntityBase, IAggregateRoot<Account>
     protected Account()
     {
     }
+
+    public Guid UserId { get; private set; }
 
     public string Username { get; private set; }
 
@@ -43,19 +46,16 @@ public class Account : EntityBase, IAggregateRoot<Account>
 
     private IEnumerable<Exception> ValidateConditions()
     {
+        if (UserId == Guid.Empty)
+            yield return new PropertyNullOrEmptyException(nameof(UserId));
+
         if (string.IsNullOrEmpty(Username))
-        {
             yield return new PropertyNullOrEmptyException(nameof(Username));
-        }
 
         if (string.IsNullOrEmpty(Password))
-        {
             yield return new PropertyNullOrEmptyException(nameof(Password));
-        }
 
         if (BrokerId == Guid.Empty)
-        {
             yield return new PropertyNullOrEmptyException(nameof(BrokerId));
-        }
     }
 }

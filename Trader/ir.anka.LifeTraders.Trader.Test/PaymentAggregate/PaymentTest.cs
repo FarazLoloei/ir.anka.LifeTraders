@@ -10,10 +10,10 @@ public class PaymentTest : PaymentTestProvider
 {
     [Theory]
     [ClassData(typeof(CryptoPaymentTestCases))]
-    public void TestCryptoPaymentConstructor(double value, Guid currencyId, DateTime issueDateTime, PaymentStatus paymentStatus,
+    public void TestCryptoPaymentConstructor(Guid userId,double value, Guid currencyId, DateTime issueDateTime, PaymentStatus paymentStatus,
         string transactionHash, Guid destinationWalletId, string sourceWalletAddress)
     {
-        var cryptoPayment = new CryptoPayment(value, currencyId, issueDateTime, paymentStatus, transactionHash, destinationWalletId,
+        var cryptoPayment = new CryptoPayment(userId, value, currencyId, issueDateTime, paymentStatus, transactionHash, destinationWalletId,
             sourceWalletAddress, paymentValidator.Object);
 
         AssertCryptoPaymentConstructorTest(value, currencyId, issueDateTime, paymentStatus, transactionHash, destinationWalletId,
@@ -35,10 +35,10 @@ public class PaymentTest : PaymentTestProvider
 
     [Theory]
     [ClassData(typeof(EmptyNullCryptoPaymentTestCases))]
-    public void TestCryptoPaymentValidator(double value, Guid currencyId, DateTime issueDateTime, PaymentStatus paymentStatus,
+    public void TestCryptoPaymentValidator(Guid userId, double value, Guid currencyId, DateTime issueDateTime, PaymentStatus paymentStatus,
         string transactionHash, Guid destinationWalletId, string sourceWalletAddress)
     {
-        Action act = () => new CryptoPayment(value, currencyId, issueDateTime, paymentStatus, transactionHash, destinationWalletId,
+        Action act = () => new CryptoPayment(userId, value, currencyId, issueDateTime, paymentStatus, transactionHash, destinationWalletId,
             sourceWalletAddress, paymentValidator.Object);
 
         act.Should().Throw<Exception>()

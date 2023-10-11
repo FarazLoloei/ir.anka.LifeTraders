@@ -16,43 +16,44 @@ public class Order : EntityBase, IAggregateRoot<Order>
 
     private readonly ISharedValidator sharedValidator;
 
-    public Order(
-        string login,
-        long ticket,
-        string symbol,
-        double openPrice,
-        DateTime openDateTime,
-        double closePrice,
-        DateTime? closeDateTime,
-        double closeVolume,
-        double stopLoss,
-        double takeProfit,
-        double stopLimitPrice,
-        PlacedType placedType,
-        OrderType orderType,
-        DealType dealType,
-        OrderState orderState,
-        double lots,
-        double contractSize,
-        long expertId,
-        int digits,
-        ExpirationType expirationType,
-        FillPolicy fillPolicy,
-        long volume,
-        double profit,
-        double profitRate,
-        double swap,
-        double commission,
-        string? closeComment,
-        string? comment,
-        int requestId,
-        DateTime expirationDateTime,
-        OrderDeal orderDealIn,
-        OrderDeal orderDealOut,
-        IOrderValidator orderValidator,
-        ISharedValidator sharedValidator)
+    public Order(Guid accountId,
+                 string login,
+                 long ticket,
+                 string symbol,
+                 double openPrice,
+                 DateTime openDateTime,
+                 double closePrice,
+                 DateTime? closeDateTime,
+                 double closeVolume,
+                 double stopLoss,
+                 double takeProfit,
+                 double stopLimitPrice,
+                 PlacedType placedType,
+                 OrderType orderType,
+                 DealType dealType,
+                 OrderState orderState,
+                 double lots,
+                 double contractSize,
+                 long expertId,
+                 int digits,
+                 ExpirationType expirationType,
+                 FillPolicy fillPolicy,
+                 long volume,
+                 double profit,
+                 double profitRate,
+                 double swap,
+                 double commission,
+                 string? closeComment,
+                 string? comment,
+                 int requestId,
+                 DateTime expirationDateTime,
+                 OrderDeal orderDealIn,
+                 OrderDeal? orderDealOut,
+                 IOrderValidator orderValidator,
+                 ISharedValidator sharedValidator)
     {
         Id = Guid.NewGuid();
+        AccountId = accountId;
         Login = login;
         Ticket = ticket;
         PlacedType = placedType;
@@ -75,8 +76,6 @@ public class Order : EntityBase, IAggregateRoot<Order>
         ExpirationType = expirationType;
         FillPolicy = fillPolicy;
         Volume = volume;
-        OrderDealIn = orderDealIn;
-        OrderDealOut = orderDealOut;
         Profit = profit;
         ProfitRate = profitRate;
         Swap = swap;
@@ -84,6 +83,10 @@ public class Order : EntityBase, IAggregateRoot<Order>
         CloseComment = closeComment;
         Comment = comment;
         RequestId = requestId;
+        OrderDealInId = orderDealIn.Id;
+        OrderDealIn = orderDealIn;
+        OrderDealOutId = orderDealOut?.Id;
+        OrderDealOut = orderDealOut;
         ExpirationDateTime = expirationDateTime;
         this.sharedValidator = sharedValidator;
         this.orderValidator = orderValidator;
@@ -93,6 +96,8 @@ public class Order : EntityBase, IAggregateRoot<Order>
     protected Order()
     {
     }
+
+    public Guid AccountId { get; private set; }
 
     public string Login { get; private set; }
 
@@ -171,9 +176,13 @@ public class Order : EntityBase, IAggregateRoot<Order>
     [Range(0, long.MaxValue)]
     public long Volume { get; private set; } = 0;
 
+    public Guid OrderDealInId { get; private set; }
+
     public OrderDeal OrderDealIn { get; private set; }
 
-    public OrderDeal OrderDealOut { get; private set; }
+    public Guid? OrderDealOutId { get; private set; }
+
+    public OrderDeal? OrderDealOut { get; private set; }
 
     public void Validate()
     {
@@ -192,6 +201,9 @@ public class Order : EntityBase, IAggregateRoot<Order>
 
         if (string.IsNullOrEmpty(Symbol))
             yield return new PropertyNullOrEmptyException(nameof(Symbol));
+
+        if (OrderDealInId == Guid.Empty)
+            yield return new PropertyNullOrEmptyException("OrderDealIn");
 
         foreach (var item in sharedValidator.CheckPropertiesValueBasedOnRangeAttribute(this,
             new Type[] { typeof(double), typeof(int), typeof(long) }))

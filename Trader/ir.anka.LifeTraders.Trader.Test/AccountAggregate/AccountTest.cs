@@ -9,28 +9,29 @@ public class AccountTest : AccountTestProvider
 {
     [Theory]
     [ClassData(typeof(AccountTestCases))]
-    public void TestCurrencyConstructor(string username, string password, Guid brokerId)
+    public void TestCurrencyConstructor(Guid userId, string username, string password, Guid brokerId)
     {
-        var account = new Account(username, password, brokerId, accountValidator.Object);
+        var account = new Account(userId, username, password, brokerId, accountValidator.Object);
 
-        AssertAccountConstructorTest(username, password, brokerId, account);
+        AssertAccountConstructorTest(userId, username, password, brokerId, account);
     }
 
     [Theory]
     [ClassData(typeof(EmptyNullAccountTestCases))]
-    public void TestAccountValidator(string username, string password, Guid brokerId)
+    public void TestAccountValidator(Guid userId,string username, string password, Guid brokerId)
     {
-        Action action = () => new Account(username, password, brokerId, accountValidator.Object);
+        Action action = () => new Account(userId, username, password, brokerId, accountValidator.Object);
         action.Should().Throw<AccountValidateException>()
                     .WithMessage(string.Format(EXCEPTION_MESSAGE_TEMPLATE, "account"));
     }
 
-    private void AssertAccountConstructorTest(string username, string password, Guid brokerId, Account expectedAccount)
+    private void AssertAccountConstructorTest(Guid userId, string username, string password, Guid brokerId, Account expectedAccount)
     {
         expectedAccount.Should().NotBeNull();
-
-        username.Should().Be(expectedAccount.Username);
-        password.Should().Be(expectedAccount.Password);
-        brokerId.Should().Be(expectedAccount.BrokerId);
+        
+        expectedAccount.UserId.Should().NotBeEmpty().And.Be(userId);
+        expectedAccount.Username.Should().NotBeEmpty().And.Be(username);
+        expectedAccount.Password.Should().NotBeEmpty().And.Be(password);
+        expectedAccount.BrokerId.Should().NotBeEmpty().And.Be(brokerId);
     }
 }
